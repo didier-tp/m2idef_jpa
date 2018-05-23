@@ -1,7 +1,7 @@
 cd /d "%~dp0"
 git add *
 git commit -a -m "nouvelle version"
-git push -u gitHubOriginTpJpa master
+git push -u gitHubOriginJpa master
 REM pause
 
 REM open with text editor

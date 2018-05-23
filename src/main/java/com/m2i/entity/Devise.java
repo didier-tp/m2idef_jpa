@@ -25,6 +25,15 @@ public class Devise {
 	public Devise() {
 	//default constructor
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Devise [codeDevise=" + codeDevise + ", monnaie=" + monnaie + ", change=" + change + "]";
+	}
+
+
 
 	public String getCodeDevise() {
 		return codeDevise;

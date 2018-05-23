@@ -14,19 +14,19 @@
 	    <!-- <class>com.m2i.entity.Pays</class> -->
 	    
 	    <properties>
-	        <!--  
+	         
 	         <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
              <property name="javax.persistence.jdbc.user" value="sa"/>
              <property name="javax.persistence.jdbc.password" value=""/>
              <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/devise_db"/>
              <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-             -->
+             <!-- 
              <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
              <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/devise_db" />         
              <property name="javax.persistence.jdbc.password" value="" />        
              <property name="javax.persistence.jdbc.user" value="root" /> 
              <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-	    
+	         -->
  			<property name="hibernate.hbm2ddl.auto" value="create" />
  			<!-- recréation des tables au demarrage + import.sql -->
 	    </properties>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="myPersistenceUnitName"
+	    transaction-type="RESOURCE_LOCAL">
+	    <!-- transaction-type="RESOURCE_LOCAL" signifie transaction simple/classique
+	         sur une seule base de données (sans JTA , sans EJB3) -->
+	    <!--  <provider>org.hibernate.ejb.HibernatePersistence</provider>   pour Hb 4 -->
+	      <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> <!-- Hb 5.3 -->
+	      <!-- provider = technologie qui implémente JPA (vrai code de EntityManager) -->
+	      
+	         <class>com.m2i.entity.Devise</class>
+	    <!-- <class>com.m2i.entity.Pays</class> -->
+	    
+	    <properties>
+	         <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+             <property name="javax.persistence.jdbc.user" value="sa"/>
+             <property name="javax.persistence.jdbc.password" value=""/>
+             <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/devise_db"/>
+	    
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+ 			<property name="hibernate.hbm2ddl.auto" value="update" />
+	    </properties>
+	</persistence-unit>
+	
+	<!-- URL projet exemple (pour config) :
+	     https://github.com/didier-mycontrib/jee-jpa-hibernate  -->
+</persistence>

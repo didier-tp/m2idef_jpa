@@ -23,7 +23,8 @@ public class DaoDeviseJpa implements IDaoDevise {
 
 	@Override
 	public List<Devise> findAllDevise() {
-		return null;
+		return entityManager.createQuery("SELECT d FROM Devise d",Devise.class)
+				.getResultList();
 	}
 
 	@Override
@@ -42,7 +43,7 @@ public class DaoDeviseJpa implements IDaoDevise {
 	public void updateDevise(Devise d) {
 		try {
 			entityManager.getTransaction().begin();
-				entityManager.merge(d); //insert into ...
+				entityManager.merge(d); //update ...
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
 			entityManager.getTransaction().rollback();
@@ -55,7 +56,7 @@ public class DaoDeviseJpa implements IDaoDevise {
 		try {
 			entityManager.getTransaction().begin();
 				Devise d = entityManager.find(Devise.class, code);
-				entityManager.remove(d);
+				entityManager.remove(d);//delete SQL
 			entityManager.getTransaction().commit();
 		} catch (Exception e) {
 			entityManager.getTransaction().rollback();

@@ -3,15 +3,24 @@ package com.m2i.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-//import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.transaction.annotation.Transactional;
 
 import com.m2i.entity.Devise;
 
+@Transactional //en version spring
+//NB: via @Transactional toutes les méthodes appelées sur cette classe
+//auront un try/catch avec entityMananager.getTransaction().begin()
+//                     et entityMananager.getTransaction().commit() ou .rollback()
 public class DaoDeviseJpa implements IDaoDevise {
-	//@PersistenceContext (avec Spring ou EJB3)
+	
+	@PersistenceContext(unitName="myPersistenceUnitName") //(avec Spring ou EJB3)
+	//NB: @PersistenceContext est ici plus adpaté que @Autowired
+	//car ça tient compte de META-INF/persitence.xml (ou équivalent)
 	private EntityManager entityManager;
 	
-    //pour version sans spring
+    //indispensable pour ancienne version sans spring
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
 	}
@@ -29,39 +38,18 @@ public class DaoDeviseJpa implements IDaoDevise {
 
 	@Override
 	public void insertDevise(Devise d) {
-		try {
-			entityManager.getTransaction().begin();
-				entityManager.persist(d); //insert into ...
-			entityManager.getTransaction().commit();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-			e.printStackTrace();
-		}
+			entityManager.persist(d); //insert into ...
 	}
 
 	@Override
 	public void updateDevise(Devise d) {
-		try {
-			entityManager.getTransaction().begin();
-				entityManager.merge(d); //update ...
-			entityManager.getTransaction().commit();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-			e.printStackTrace();
-		}
+		entityManager.merge(d); //update ...
 	}
 
 	@Override
 	public void deleteDevise(String code) {
-		try {
-			entityManager.getTransaction().begin();
-				Devise d = entityManager.find(Devise.class, code);
-				entityManager.remove(d);//delete SQL
-			entityManager.getTransaction().commit();
-		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
-			e.printStackTrace();
-		}
+		Devise d = entityManager.find(Devise.class, code);
+		entityManager.remove(d);//delete SQL
 	}
 
 }

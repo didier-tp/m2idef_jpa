@@ -1,5 +1,7 @@
 package com.m2i.test;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -31,6 +33,10 @@ public class TestDaoDevise {
 		dao.insertDevise(d);
 		Devise dRelu = dao.findDeviseByCode("EUR");
 		System.out.println(dRelu.toString()); //avec toString() bien codé sur Devise
+		List<Devise> listeDev = dao.findAllDevise();
+		for(Devise dev : listeDev){
+			System.out.println("\t"+dev);
+		}
 		
 		//5. fermer le EntityManager
 		entityManager.close();

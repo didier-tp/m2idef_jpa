@@ -2,32 +2,23 @@ package com.m2i.test;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.m2i.dao.DaoDeviseJpa;
+import com.m2i.dao.IDaoDevise;
 import com.m2i.entity.Devise;
 
 public class TestDaoDevise {
 	
 	//version sans Spring
 	public static void main(String[] args) {
-		//1. créer l'objet technique EntityManagerFactory de JPA 
-		//en analysant le fichier META-INF/persistence.xml
-		EntityManagerFactory entityManagerFactory =
-				 Persistence.createEntityManagerFactory("myPersistenceUnitName");
-		//myPersistenceUnitName est un nom logique d'une partie de la 
-		//configuration de META-INF/persistence.xml
+		//1. initialiser le contexte spring via config xml
+		ClassPathXmlApplicationContext springContext =  new ClassPathXmlApplicationContext("/beans.xml");
+	
+				
+		//2. récupérer un access au DAO géré par Spring
+		IDaoDevise dao = springContext.getBean(IDaoDevise.class);
 		
-		//2. créer le EntityManager via la factory
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		
-		//3. créer le DaoDeviseJpa et appeler .setEntityManager()
-		DaoDeviseJpa dao = new DaoDeviseJpa();
-		dao.setEntityManager(entityManager);
-		
-		//4. appeler et tester des méthodes sur le DAO
+		//3. appeler et tester des méthodes sur le DAO
 		Devise d = new Devise();
 		d.setCodeDevise("EUR"); d.setMonnaie("euro"); d.setChange(1.1);
 		dao.insertDevise(d);
@@ -38,11 +29,9 @@ public class TestDaoDevise {
 			System.out.println("\t"+dev);
 		}
 		
-		//5. fermer le EntityManager
-		entityManager.close();
+		//4. fermer le context spring
+		springContext.close();
 		
-		//6. Fermer le EntityManagerFactory
-		entityManagerFactory.close();
 	}
 
 }

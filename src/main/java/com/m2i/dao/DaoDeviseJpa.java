@@ -5,10 +5,12 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.m2i.entity.Devise;
 
+@Component//(ou @Repository)de spring
 @Transactional //en version spring
 //NB: via @Transactional toutes les méthodes appelées sur cette classe
 //auront un try/catch avec entityMananager.getTransaction().begin()

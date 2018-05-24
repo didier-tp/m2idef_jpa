@@ -34,4 +34,6 @@ public class TestDaoDevise {
 			System.out.println("\t"+dev);
 		}
 	}
+	
+	
 }

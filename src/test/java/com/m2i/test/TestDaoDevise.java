@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.m2i.dao.IDaoDevise;
 import com.m2i.entity.Devise;
+import com.m2i.entity.Pays;
 
 /*
  * classe de Test gérée par Spring+JUnit4
@@ -23,11 +24,20 @@ public class TestDaoDevise {
 	private IDaoDevise dao; //à tester
 	
 	@Test
+	public void testPays(){
+		Devise deviseEuro = dao.findDeviseByCode("EUR");
+		System.out.println("deviseEuro"+ deviseEuro);
+		for(Pays p : deviseEuro.getListePays()){
+			System.out.println("\t"+ p);
+		}
+	}
+	
+	@Test
 	public void testDao(){
 		Devise d = new Devise();
-		d.setCodeDevise("EUR"); d.setMonnaie("euro"); d.setChange(1.1);
+		d.setCodeDevise("EUR2"); d.setMonnaie("euro2"); d.setChange(1.1);
 		dao.insertDevise(d);
-		Devise dRelu = dao.findDeviseByCode("EUR");
+		Devise dRelu = dao.findDeviseByCode("EUR2");
 		System.out.println(dRelu.toString()); //avec toString() bien codé sur Devise
 		List<Devise> listeDev = dao.findAllDevise();
 		for(Devise dev : listeDev){

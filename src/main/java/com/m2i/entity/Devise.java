@@ -1,10 +1,12 @@
 package com.m2i.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 // javax.persistence. = JPA
 /*
@@ -25,6 +27,9 @@ public class Devise {
 	@Column(nullable=true,name="dchange")
 	private Double change; // change par rapport au dollar
 
+	@OneToMany(mappedBy="devise",fetch=FetchType.EAGER)
+	private List<Pays> listePays; //avec get/set
+	
 	public Devise() {
 	//default constructor
 	}
@@ -60,6 +65,18 @@ public class Devise {
 
 	public void setChange(Double change) {
 		this.change = change;
+	}
+
+
+
+	public List<Pays> getListePays() {
+		return listePays;
+	}
+
+
+
+	public void setListePays(List<Pays> listePays) {
+		this.listePays = listePays;
 	}
 	
 	

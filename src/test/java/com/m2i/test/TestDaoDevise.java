@@ -12,9 +12,9 @@ public class TestDaoDevise {
 	//version sans Spring
 	public static void main(String[] args) {
 		//1. initialiser le contexte spring via config xml
-		ClassPathXmlApplicationContext springContext =  new ClassPathXmlApplicationContext("/beans.xml");
+		ClassPathXmlApplicationContext springContext = 
+				new ClassPathXmlApplicationContext("/beans.xml");
 	
-				
 		//2. récupérer un access au DAO géré par Spring
 		IDaoDevise dao = springContext.getBean(IDaoDevise.class);
 		

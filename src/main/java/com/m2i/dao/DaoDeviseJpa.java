@@ -19,7 +19,7 @@ public class DaoDeviseJpa implements IDaoDevise {
 	
 	@PersistenceContext(unitName="myPersistenceUnitName") //(avec Spring ou EJB3)
 	//NB: @PersistenceContext est ici plus adpaté que @Autowired
-	//car ça tient compte de META-INF/persitence.xml (ou équivalent)
+	//car ça tient compte de META-INF/persistence.xml (ou équivalent)
 	private EntityManager entityManager;
 	
     //indispensable pour ancienne version sans spring

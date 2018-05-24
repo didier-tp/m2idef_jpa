@@ -2,6 +2,8 @@ package com.m2i.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 // javax.persistence. = JPA
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 public class Devise {
 	@Column(length=6)//VARCHAR(6)
 	@Id//clef primaire
+	//@GeneratedValue(strategy=GenerationType.IDENTITY) pour auto_incr (impossible sur String)
 	private String codeDevise;//  "EUR" , "USD" , ...
 	
 	@Column(length=64)//VARCHAR(64)

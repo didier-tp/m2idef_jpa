@@ -16,17 +16,14 @@ import com.m2i.entity.Devise;
  * nécessitant junit4.12 et spring-test dans pom.xml
  * à lancer sous eclipse via run as / junit test 
  */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/beans.xml")
 public class TestDaoDevise {
-	
 	@Autowired
 	private IDaoDevise dao; //à tester
 	
 	@Test
 	public void testDao(){
-		//appeler et tester des méthodes sur le DAO
 		Devise d = new Devise();
 		d.setCodeDevise("EUR"); d.setMonnaie("euro"); d.setChange(1.1);
 		dao.insertDevise(d);
@@ -37,5 +34,4 @@ public class TestDaoDevise {
 			System.out.println("\t"+dev);
 		}
 	}
-
 }

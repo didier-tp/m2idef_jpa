@@ -11,6 +11,7 @@
 	      <!-- provider = technologie qui implémente JPA (vrai code de EntityManager) -->
 	      
 	         <class>com.m2i.entity.Devise</class>
+	         <class>com.m2i.entity.Client</class>
 	    <!-- <class>com.m2i.entity.Pays</class> -->
 	    
 	    <properties>

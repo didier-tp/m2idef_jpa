@@ -13,3 +13,7 @@ INSERT INTO Pays(codePays,nom,devise) VALUES ('uk', 'Royaume Uni', 'GBP')
 
 INSERT INTO Client(numero,nom,prenom,salaire) VALUES (1,'dupond','eric',2000)
 INSERT INTO Client(numero,nom,prenom,salaire) VALUES (2,'durant','alex',2500)
+
+INSERT INTO Compte(numero,label,solde,client) VALUES (1,'compte courant',250.7,1)
+INSERT INTO Compte(numero,label,solde,client) VALUES (2,'compte epargne',50.7,1)
+INSERT INTO Compte(numero,label,solde,client) VALUES (3,'compte courant',0.7,2)

@@ -2,9 +2,6 @@ package com.m2i.test;
 
 import java.util.List;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.m2i.dao.IDaoClient;
 import com.m2i.entity.Client;
-import com.m2i.entity.Devise;
+import com.m2i.entity.Compte;
 
 /*
  * classe de Test gérée par Spring+JUnit4
@@ -41,6 +38,15 @@ public class TestDaoClient {
 		List<Client> listeClient = dao.findAllClient();
 		for(Client cli : listeClient){
 			System.out.println("\t"+cli);
+		}
+	}
+	
+	@Test
+	public void testComptes(){
+		Client c1 = dao.findClientByNumero(1L);
+		System.out.println("c1= "+ c1);
+		for(Compte c : c1.getListeComptes()){
+			System.out.println("\t"+ c);
 		}
 	}
 	

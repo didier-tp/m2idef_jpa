@@ -13,6 +13,7 @@
 	         <class>com.m2i.entity.Devise</class>
 	         <class>com.m2i.entity.Client</class>
 	         <class>com.m2i.entity.Pays</class>
+	         <class>com.m2i.entity.Compte</class>
 	    
 	    <properties>
 	         

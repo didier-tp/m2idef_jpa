@@ -1,10 +1,14 @@
 package com.m2i.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 // javax.persistence. = JPA
 /*
@@ -28,7 +32,8 @@ public class Client {
 	//salaire d'un client (ou employe)
 	private Double salaire; //avec get/set
 	
-
+	@OneToMany(mappedBy="client", fetch=FetchType.EAGER)
+    private List<Compte> listeComptes;
 
 	public Client() {
 	//default constructor
@@ -84,6 +89,22 @@ public class Client {
 
 	public void setSalaire(Double salaire) {
 		this.salaire = salaire;
+	}
+
+
+
+
+
+	public List<Compte> getListeComptes() {
+		return listeComptes;
+	}
+
+
+
+
+
+	public void setListeComptes(List<Compte> listeComptes) {
+		this.listeComptes = listeComptes;
 	}
 
 }

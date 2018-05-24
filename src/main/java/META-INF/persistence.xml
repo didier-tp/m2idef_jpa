@@ -18,10 +18,10 @@
 	         
 	         <!-- maintenant dataSource H2 ou MySQL pris en charge par spring -->
 	         
-             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-             <!-- 
+<!--              <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> -->
+             
              <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-	         -->
+	         
  			<property name="hibernate.hbm2ddl.auto" value="create" />
  			<!-- recréation des tables au demarrage + import.sql -->
 	    </properties>

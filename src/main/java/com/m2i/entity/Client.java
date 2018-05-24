@@ -25,16 +25,27 @@ public class Client {
 	@Column(length=32)//VARCHAR(32)
 	private String prenom;
 	
+	//salaire d'un client (ou employe)
+	private Double salaire; //avec get/set
+	
+
 
 	public Client() {
 	//default constructor
 	}
 
 
+	
+
+
 	@Override
 	public String toString() {
-		return "Client [numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "Client [numero=" + numero + ", nom=" + nom + ", prenom=" + prenom 
+				   + ", salaire=" + salaire + "]";
 	}
+
+
+
 
 
 	public Long getNumero() {
@@ -66,6 +77,13 @@ public class Client {
 		this.prenom = prenom;
 	}
 	
-	
+	public Double getSalaire() {
+		return salaire;
+	}
+
+
+	public void setSalaire(Double salaire) {
+		this.salaire = salaire;
+	}
 
 }

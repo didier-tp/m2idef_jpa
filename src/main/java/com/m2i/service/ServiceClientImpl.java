@@ -27,7 +27,8 @@ public class ServiceClientImpl implements IServiceClient {
 		//et entityManager.getTransaction().begin() automatique
 		List<Client> listeClientsPersistants = daoClient.findAllClient();
 		for(Client cli : listeClientsPersistants){
-			cli.setSalaire(cli.getSalaire() * (1 + pourcentage / 100));
+			if(cli.getSalaire()!=null)
+			   cli.setSalaire(cli.getSalaire() * (1 + pourcentage / 100));
 		}
         //en fin de méthode (sans exception):
 		//entityManager.getTransaction().commit()

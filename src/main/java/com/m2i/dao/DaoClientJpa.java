@@ -32,10 +32,23 @@ public class DaoClientJpa implements IDaoClient {
 	
 	@Override
 	public Client findClientWithComptesByNumero(Long numero) {
-		Client cli= entityManager.find(Client.class, numero /*id/pk*/);
+		/*
+		//solution 1 moyenne:
+		Client cli= entityManager.find(Client.class, numero );
 		for(Compte c : cli.getListeComptes()){} //pour remonter tout de suite en mémoire
 		                                        //les éléments de la collection en mode LAZY
 		return cli;
+		*/
+		//solution 2:
+		return entityManager.createQuery(
+			"SELECT c FROM Client c INNER JOIN FETCH c.listeComptes WHERE c.numero = :numCli"
+				             , Client.class)
+							.setParameter("numCli", numero)
+				            .getSingleResult();
+		//NB: la partie "INNER JOIN FETCH c.listeComptes" de la requete
+		//demande à remonter TOUT DE SUITE (meme en mode LAZY) via le mot clef FETCH
+		//les éléments de la collection des comptes rattachés au client
+		//par une jointure (déjà paramétrée par le @OneToMany) 
 	}
 
 	@Override

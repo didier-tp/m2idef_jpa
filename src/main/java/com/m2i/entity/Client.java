@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 // javax.persistence. = JPA
@@ -17,6 +18,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Client")
+@NamedQuery(name="Client.findByNumWithComptes",
+   query="SELECT c FROM Client c INNER JOIN FETCH c.listeComptes WHERE c.numero = :numCli")
 public class Client {
 	
 	@Id//clef primaire

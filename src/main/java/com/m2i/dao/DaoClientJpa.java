@@ -39,7 +39,8 @@ public class DaoClientJpa implements IDaoClient {
 		                                        //les éléments de la collection en mode LAZY
 		return cli;
 		*/
-		//solution 2:
+		/*
+		//solution 2 (avec query "JPAQL / HBQL" mais pas SQL )
 		return entityManager.createQuery(
 			"SELECT c FROM Client c INNER JOIN FETCH c.listeComptes WHERE c.numero = :numCli"
 				             , Client.class)
@@ -49,6 +50,12 @@ public class DaoClientJpa implements IDaoClient {
 		//demande à remonter TOUT DE SUITE (meme en mode LAZY) via le mot clef FETCH
 		//les éléments de la collection des comptes rattachés au client
 		//par une jointure (déjà paramétrée par le @OneToMany) 
+		 */
+		//solution 3 (encore plus performante) avec namedQuery (préparée dès le début):
+		return entityManager.createNamedQuery(
+				"Client.findByNumWithComptes" , Client.class)
+								.setParameter("numCli", numero)
+					            .getSingleResult();
 	}
 
 	@Override

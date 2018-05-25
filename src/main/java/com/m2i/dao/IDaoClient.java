@@ -17,4 +17,5 @@ public interface IDaoClient {
     public void insertClient(Client d);
     public void updateClient(Client d);
     public void deleteClient(Long numero);
+	Client findClientWithComptesByNumero(Long numero);
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.m2i.entity.Client;
-import com.m2i.entity.Devise;
+import com.m2i.entity.Compte;
 
 @Component//(ou @Repository)de spring
 @Transactional //en version spring
@@ -28,6 +28,14 @@ public class DaoClientJpa implements IDaoClient {
 	@Override
 	public Client findClientByNumero(Long numero) {
 		return entityManager.find(Client.class, numero /*id/pk*/);
+	}
+	
+	@Override
+	public Client findClientWithComptesByNumero(Long numero) {
+		Client cli= entityManager.find(Client.class, numero /*id/pk*/);
+		for(Compte c : cli.getListeComptes()){} //pour remonter tout de suite en mémoire
+		                                        //les éléments de la collection en mode LAZY
+		return cli;
 	}
 
 	@Override

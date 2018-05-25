@@ -43,10 +43,10 @@ public class TestDaoClient {
 	
 	@Test
 	public void testComptes(){
-		Client c1 = dao.findClientByNumero(1L);
-		System.out.println("c1= "+ c1);
+		Client c1 = dao.findClientWithComptesByNumero(1L);
+		System.out.println("c1= "+ c1.toString());
 		for(Compte c : c1.getListeComptes()){
-			System.out.println("\t"+ c);
+			System.out.println("\t"+ c.toString());
 		}
 	}
 	

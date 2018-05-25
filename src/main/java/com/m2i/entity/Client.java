@@ -32,25 +32,20 @@ public class Client {
 	//salaire d'un client (ou employe)
 	private Double salaire; //avec get/set
 	
-	@OneToMany(mappedBy="client", fetch=FetchType.EAGER)
-	//@OneToMany(mappedBy="client", fetch=FetchType.LAZY)
-    private List<Compte> listeComptes;
+	//@OneToMany(mappedBy="client", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="client", fetch=FetchType.LAZY)
+    private List<Compte> listeComptes; //avec get/set
 
 	public Client() {
 	//default constructor
 	}
 
 
-	
-
 
 	@Override
 	public String toString() {
-		return "Client [numero=" + numero + ", nom=" + nom + ", prenom=" + prenom 
-				   + ", salaire=" + salaire + "]";
+		return "Client [numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", salaire=" + salaire + "]";
 	}
-
-
 
 
 

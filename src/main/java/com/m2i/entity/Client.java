@@ -33,6 +33,7 @@ public class Client {
 	private Double salaire; //avec get/set
 	
 	@OneToMany(mappedBy="client", fetch=FetchType.EAGER)
+	//@OneToMany(mappedBy="client", fetch=FetchType.LAZY)
     private List<Compte> listeComptes;
 
 	public Client() {

@@ -21,7 +21,7 @@ public class Compte {
 	private Double solde;
 	
 	@ManyToOne
-	@JoinColumn(name="client")
+	@JoinColumn(name="client") //ou bien @JoinColumn(name="numClient")
 	private Client client;
 
 	@Override

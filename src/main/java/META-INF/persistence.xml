@@ -31,6 +31,7 @@
  			pour demander à generer create.sql et drop.sql pas parfaits 
  			et a generalement retoucher -->
 
+ 
        <property name="javax.persistence.schema-generation.scripts.action" 
                  value="drop-and-create"/>
 

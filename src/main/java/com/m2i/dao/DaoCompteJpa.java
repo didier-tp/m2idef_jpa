@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.m2i.entity.Client;
 import com.m2i.entity.Compte;
 
 @Component//(ou @Repository)de spring
@@ -49,6 +50,14 @@ public class DaoCompteJpa implements IDaoCompte {
 	public void deleteCompte(Long numero) {
 		Compte c = entityManager.find(Compte.class, numero);
 		entityManager.remove(c);//delete SQL
+	}
+
+	@Override
+	public List<Compte> comptesDuClient(Long numCli) {
+		return entityManager.createNamedQuery(
+				"Compte.findByNumCli" , Compte.class)
+								.setParameter("numCli", numCli)
+					            .getResultList();
 	}
 
 }

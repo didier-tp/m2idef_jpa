@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.m2i.dao.IDaoCompte;
+import com.m2i.entity.Client;
 import com.m2i.entity.Compte;
 import com.m2i.entity.Compte;
 
@@ -27,8 +28,11 @@ public class TestDaoCompte {
 	
 	
 	@Test
-	public void testComptes(){
-		//...
+	public void testComptesDuClient(){
+		System.out.println("comptes du client 1:");
+		for(Compte c : dao.comptesDuClient(1L)){
+			System.out.println("\t"+ c.toString());
+		}
 	}
 	
 	/*

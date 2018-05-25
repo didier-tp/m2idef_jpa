@@ -17,4 +17,7 @@ public interface IDaoCompte {
     public void insertCompte(Compte d);
     public void updateCompte(Compte d);
     public void deleteCompte(Long numero);
+    
+    //a coder avec une namedQuery basee sur FROM Compte ...
+    public List<Compte> comptesDuClient(Long numCli);
 }

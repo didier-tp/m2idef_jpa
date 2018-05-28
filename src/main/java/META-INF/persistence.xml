@@ -16,6 +16,7 @@
 	         <class>com.m2i.entity.Pays</class>
 	         <class>com.m2i.entity.Compte</class>
 	         <class>com.m2i.entity.CompteLivretA</class>
+	         <class>com.m2i.entity.ComptePEL</class>
 	         <class>com.m2i.entity.Operation</class>
 	         
 	    

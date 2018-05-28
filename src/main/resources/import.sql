@@ -18,10 +18,10 @@ INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (1,'rue 1','75001','P
 INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (2,'rue 2','69000','Lyon')
 
 INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (1,'compte courant',250.7,'COURANT')
-INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (2,'compte epargne',50.7,'COURANT')
 INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (3,'compte courant',0.7,'COURANT')
 
 INSERT INTO Compte(numero,label,solde,typeCompte,tauxInteret)  VALUES (4,'livret A xy',345.6, 'LivretA' , 1.0)
+INSERT INTO Compte(numero,label,solde,typeCompte,tauxInteret,apportMensuel) VALUES (2,'compte PEL xyz',50.7,'PEL',1.5,50.0)
 
 INSERT INTO Compte_Client(numCpt,numCli) VALUES (1,1)
 INSERT INTO Compte_Client(numCpt,numCli) VALUES (2,1)

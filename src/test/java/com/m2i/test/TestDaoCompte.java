@@ -24,7 +24,7 @@ public class TestDaoCompte {
 	
 	@Test
 	public void testOperationsCompte1(){
-		System.out.println("coperation1 du compmte 1:");
+		System.out.println("coperation1 du compte 1:");
 		for(Operation op : dao.operationsDuCompte(1L)){
 			System.out.println("\t"+ op.toString());
 		}

@@ -18,9 +18,9 @@ import javax.persistence.Table;
 @Table(name="Compte")
 @NamedQueries({
 @NamedQuery(name="Compte.findByNumCli",
-            query="SELECT cpt FROM Compte cpt WHERE cpt.client.numero = :numCli") ,
+ query="SELECT cpt FROM Compte cpt WHERE cpt.client.numero = :numCli") ,
 @NamedQuery(name="Compte.findOperationsByNumCompte",
-			query="SELECT op FROM Compte cpt INNER JOIN cpt.listeOperations op WHERE cpt.numero = :numCpt")
+ query="SELECT op FROM Compte cpt INNER JOIN cpt.listeOperations op WHERE cpt.numero = :numCpt")
 })
 public class Compte {
 	

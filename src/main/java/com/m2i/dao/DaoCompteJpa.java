@@ -63,7 +63,8 @@ public class DaoCompteJpa implements IDaoCompte {
 	@Override
 	public List<Operation> operationsDuCompte(long numCpt) {
 		return entityManager.createNamedQuery(
-				"Compte.findOperationsByNumCompte" , Operation.class)
+				/*"Compte.findOperationsByNumCompte"*/
+				"Operation.findOperationsByNumCompte", Operation.class)
 								.setParameter("numCpt", numCpt)
 					            .getResultList();
 	}

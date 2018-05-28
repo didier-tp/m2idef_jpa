@@ -8,12 +8,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity 
-@Table(name="Operation")  
+@Table(name="Operation") 
+@NamedQuery(name="Operation.findOperationsByNumCompte",
+        query="SELECT op FROM Operation op WHERE op.compte.numero = :numCpt")
 public class Operation {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -12,6 +12,7 @@
 	      
 	         <class>com.m2i.entity.Devise</class>
 	         <class>com.m2i.entity.Client</class>
+	         <class>com.m2i.entity.Adresse</class>
 	         <class>com.m2i.entity.Pays</class>
 	         <class>com.m2i.entity.Compte</class>
 	    
@@ -19,9 +20,9 @@
 	         
 	         <!-- maintenant dataSource H2 ou MySQL pris en charge par spring -->
 	         
-<!--              <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> -->
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> -->
              
-             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+           <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /> 
 	         
  			<property name="hibernate.hbm2ddl.auto" value="create" />
  			<!-- recréation des tables au demarrage + import.sql -->
@@ -29,9 +30,9 @@
  			
  			<!-- proprietes avancees , facultatives , nouvelles de JPA 2.1
  			pour demander à generer create.sql et drop.sql pas parfaits 
- 			et a generalement retoucher -->
+ 			et a generalement retoucher (a activer temporairement , bug )-->
 
- 
+      <!-- 
        <property name="javax.persistence.schema-generation.scripts.action" 
                  value="drop-and-create"/>
 
@@ -40,7 +41,7 @@
 
        <property name="javax.persistence.schema-generation.scripts.drop-target"  
                  value="src/main/script/generated/drop.sql" />	                               
-
+       -->
 	 
 	    </properties>
 	</persistence-unit>

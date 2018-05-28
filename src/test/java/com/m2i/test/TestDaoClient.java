@@ -42,6 +42,12 @@ public class TestDaoClient {
 	}
 	
 	@Test
+	public void testClientAvecAdresse(){
+		Client c1 = dao.findClientByNumero(1L);
+		System.out.println("adresse du client 1:" + c1.getAdresse().toString());
+	}
+	
+	@Test
 	public void testComptes(){
 		Client c1 = dao.findClientWithComptesByNumero(1L);
 		System.out.println("c1= "+ c1.toString());

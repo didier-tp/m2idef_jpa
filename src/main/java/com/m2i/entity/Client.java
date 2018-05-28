@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 // javax.persistence. = JPA
 /*
@@ -39,6 +40,9 @@ public class Client {
 	@OneToMany(mappedBy="client", fetch=FetchType.LAZY)
     private List<Compte> listeComptes; //avec get/set
 
+	@OneToOne(mappedBy="client")
+	private Adresse adresse;//+get/set
+	
 	public Client() {
 	//default constructor
 	}
@@ -90,20 +94,26 @@ public class Client {
 		this.salaire = salaire;
 	}
 
-
-
-
-
 	public List<Compte> getListeComptes() {
 		return listeComptes;
 	}
-
-
-
 
 
 	public void setListeComptes(List<Compte> listeComptes) {
 		this.listeComptes = listeComptes;
 	}
 
+
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
+
+	
 }

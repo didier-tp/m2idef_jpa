@@ -16,17 +16,24 @@ public class ServiceCompteImpl implements IServiceCompte {
 	private IDaoCompte daoCompte;
 
 	@Override
-	//@Transactional //à tester avec ou sans @Transactional
+	@Transactional() //à tester avec ou sans @Transactional
 	//à tester avec effectuerVirement(1L, 2L, 50.0) , comptes 1L et 2L existants
 	//à tester également avec effectuerVirement(1L, -2L, 50.0) , compte -2L inexistant
 	public void effectuerVirement(Long numCptDeb, Long numCptCred, Double montant) {
-		Compte cptDeb = daoCompte.findCompteByNumero(numCptDeb);
-		cptDeb.setSolde(cptDeb.getSolde() - montant);
-		daoCompte.updateCompte(cptDeb); //inutile dans version avec @Transactional
+		try {
+			Compte cptDeb = daoCompte.findCompteByNumero(numCptDeb);
+			cptDeb.setSolde(cptDeb.getSolde() - montant);
+			if(cptDeb.getSolde() < 0)
+				throw new RuntimeException("virement inderdit car compte à decouvert");
+			//daoCompte.updateCompte(cptDeb); //inutile dans version avec @Transactional
 
-		Compte cptCred = daoCompte.findCompteByNumero(numCptCred);
-		cptCred.setSolde(cptCred.getSolde() + montant);
-		daoCompte.updateCompte(cptCred); //inutile dans version avec @Transactional
+			Compte cptCred = daoCompte.findCompteByNumero(numCptCred);
+			cptCred.setSolde(cptCred.getSolde() + montant);
+			//daoCompte.updateCompte(cptCred); //inutile dans version avec @Transactional
+		} catch (Exception e) {
+			//logger.error(...)
+			throw new RuntimeException("echec virement",e);
+		}
 	}
 
 	@Override

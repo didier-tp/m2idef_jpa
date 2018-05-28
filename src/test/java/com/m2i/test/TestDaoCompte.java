@@ -25,7 +25,13 @@ public class TestDaoCompte {
 	@Autowired
 	private IDaoCompte dao; //à tester
 	
-	
+	@Test
+	public void testOperationsCompte1(){
+		System.out.println("coperation1 du compmte 1:");
+		for(Operation op : dao.operationsDuCompte(1L)){
+			System.out.println("\t"+ op.toString());
+		}
+	}
 	
 	@Test
 	public void testComptesDuClient(){

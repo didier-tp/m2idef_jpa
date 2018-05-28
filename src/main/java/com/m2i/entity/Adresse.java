@@ -8,7 +8,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 //@Entity ou @Embeddable
-@Entity
+@Entity 
 @Table(name="Adresse")//au sens AdresseDuClient avec correspondance de pk
 public class Adresse {
 

@@ -1,7 +1,5 @@
 package com.m2i.test;
 
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,9 +8,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.m2i.dao.IDaoCompte;
-import com.m2i.entity.Client;
 import com.m2i.entity.Compte;
-import com.m2i.entity.Compte;
+import com.m2i.entity.Operation;
 
 /*
  * classe de Test gérée par Spring+JUnit4

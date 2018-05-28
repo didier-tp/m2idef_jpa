@@ -3,6 +3,7 @@ package com.m2i.dao;
 import java.util.List;
 
 import com.m2i.entity.Compte;
+import com.m2i.entity.Operation;
 
 /*
  * interface d'un DAO = Data Access Object
@@ -20,4 +21,5 @@ public interface IDaoCompte {
     
     //a coder avec une namedQuery basee sur FROM Compte ...
     public List<Compte> comptesDuClient(Long numCli);
+	public List<Operation> operationsDuCompte(long numCpt);
 }

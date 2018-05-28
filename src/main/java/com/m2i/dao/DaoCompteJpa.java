@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.m2i.entity.Client;
 import com.m2i.entity.Compte;
+import com.m2i.entity.Operation;
 
 @Component//(ou @Repository)de spring
 @Transactional //en version spring
@@ -57,6 +57,14 @@ public class DaoCompteJpa implements IDaoCompte {
 		return entityManager.createNamedQuery(
 				"Compte.findByNumCli" , Compte.class)
 								.setParameter("numCli", numCli)
+					            .getResultList();
+	}
+
+	@Override
+	public List<Operation> operationsDuCompte(long numCpt) {
+		return entityManager.createNamedQuery(
+				"Compte.findOperationsByNumCompte" , Operation.class)
+								.setParameter("numCpt", numCpt)
 					            .getResultList();
 	}
 

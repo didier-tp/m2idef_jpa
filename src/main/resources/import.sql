@@ -20,3 +20,7 @@ INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (2,'rue 2','69000','L
 INSERT INTO Compte(numero,label,solde,client) VALUES (1,'compte courant',250.7,1)
 INSERT INTO Compte(numero,label,solde,client) VALUES (2,'compte epargne',50.7,1)
 INSERT INTO Compte(numero,label,solde,client) VALUES (3,'compte courant',0.7,2)
+
+INSERT INTO Operation(id,label,montant,date,compte) VALUES (1,'achat xy',-12.5 , '2018-03-20' , 1)
+INSERT INTO Operation(id,label,montant,date,compte) VALUES (2,'achat zzz',-34.5 , '2018-04-25' , 1)
+INSERT INTO Operation(id,label,montant,date,compte) VALUES (3,'achat xyz',-4.5 , '2018-02-13' , 2)

@@ -21,14 +21,17 @@ public class ServiceCompteImpl implements IServiceCompte {
 	//à tester également avec effectuerVirement(1L, -2L, 50.0) , compte -2L inexistant
 	public void effectuerVirement(Long numCptDeb, Long numCptCred, Double montant) {
 		try {
+			String labelOp = "virement de " + montant + " du compte " + numCptDeb +  " vers compte " + numCptCred ;
 			Compte cptDeb = daoCompte.findCompteByNumero(numCptDeb);
-			cptDeb.setSolde(cptDeb.getSolde() - montant);
+			//cptDeb.setSolde(cptDeb.getSolde() - montant);
+			cptDeb.debiter(montant,"debit suite a " + labelOp);
 			if(cptDeb.getSolde() < 0)
 				throw new RuntimeException("virement inderdit car compte à decouvert");
 			//daoCompte.updateCompte(cptDeb); //inutile dans version avec @Transactional
 
 			Compte cptCred = daoCompte.findCompteByNumero(numCptCred);
-			cptCred.setSolde(cptCred.getSolde() + montant);
+			cptCred.crediter(montant,"credit suite a " + labelOp);
+			//cptCred.setSolde(cptCred.getSolde() + montant);
 			//daoCompte.updateCompte(cptCred); //inutile dans version avec @Transactional
 		} catch (Exception e) {
 			//logger.error(...)

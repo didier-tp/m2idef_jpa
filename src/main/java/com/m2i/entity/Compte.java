@@ -1,7 +1,9 @@
 package com.m2i.entity;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -40,7 +42,7 @@ public class Compte {
 	  inverseJoinColumns = {@JoinColumn(name = "numCli")}) 
 	private List<Client> listeClients; 
 	
-	@OneToMany(mappedBy="compte", fetch=FetchType.LAZY)
+	@OneToMany(mappedBy="compte", fetch=FetchType.LAZY , cascade =CascadeType.ALL)
 	private List<Operation> listeOperations; //avec get/set
 
 		
@@ -48,6 +50,33 @@ public class Compte {
 	@Override
 	public String toString() {
 		return "Compte [numero=" + numero + ", label=" + label + ", solde=" + solde + "]";
+	}
+	
+	public void debiter(double montant){
+		this.debiter(montant,"debit");
+	}
+	public void debiter(double montant,String label){
+		this.setSolde(this.getSolde()-montant);
+		Operation opDebit = new Operation();
+		opDebit.setLabel(label);
+		opDebit.setDate(new Date());
+		opDebit.setMontant(-montant);
+		opDebit.setCompte(this);
+		this.getListeOperations().add(opDebit);
+	}
+	
+	public void crediter(double montant){
+	    this.crediter(montant,"credit");
+	}
+	
+	public void crediter(double montant,String label){
+		this.setSolde(this.getSolde()+montant);
+		Operation opCredit = new Operation();
+		opCredit.setLabel(label);
+		opCredit.setDate(new Date());
+		opCredit.setMontant(+montant);
+		opCredit.setCompte(this);
+		this.getListeOperations().add(opCredit);
 	}
 
 	public Long getNumero() {

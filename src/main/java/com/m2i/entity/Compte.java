@@ -4,11 +4,16 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -26,8 +31,10 @@ import javax.persistence.Table;
  query="SELECT op FROM Compte cpt INNER JOIN cpt.listeOperations op WHERE cpt.numero = :numCpt")
 })
 //old 1-n Compte.findByNumCli query : SELECT cpt FROM Compte cpt WHERE cpt.client.numero = :numCli
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="typeCompte",discriminatorType=DiscriminatorType.STRING )
+@DiscriminatorValue("COURANT") //compte courant par defaut
 public class Compte {
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long numero;
@@ -45,13 +52,12 @@ public class Compte {
 	@OneToMany(mappedBy="compte", fetch=FetchType.LAZY , cascade =CascadeType.ALL)
 	private List<Operation> listeOperations; //avec get/set
 
-		
 
+	
 	@Override
 	public String toString() {
 		return "Compte [numero=" + numero + ", label=" + label + ", solde=" + solde + "]";
 	}
-	
 	public void debiter(double montant){
 		this.debiter(montant,"debit");
 	}

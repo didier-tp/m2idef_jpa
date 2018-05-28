@@ -17,9 +17,13 @@ INSERT INTO Client(numero,nom,prenom,salaire) VALUES (2,'durant','alex',2500)
 INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (1,'rue 1','75001','Paris')
 INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (2,'rue 2','69000','Lyon')
 
-INSERT INTO Compte(numero,label,solde,client) VALUES (1,'compte courant',250.7,1)
-INSERT INTO Compte(numero,label,solde,client) VALUES (2,'compte epargne',50.7,1)
-INSERT INTO Compte(numero,label,solde,client) VALUES (3,'compte courant',0.7,2)
+INSERT INTO Compte(numero,label,solde) VALUES (1,'compte courant',250.7)
+INSERT INTO Compte(numero,label,solde) VALUES (2,'compte epargne',50.7)
+INSERT INTO Compte(numero,label,solde) VALUES (3,'compte courant',0.7)
+
+INSERT INTO Compte_Client(numCpt,numCli) VALUES (1,1)
+INSERT INTO Compte_Client(numCpt,numCli) VALUES (2,1)
+INSERT INTO Compte_Client(numCpt,numCli) VALUES (3,1)
 
 INSERT INTO Operation(id,label,montant,date,compte) VALUES (1,'achat xy',-12.5 , '2018-03-20' , 1)
 INSERT INTO Operation(id,label,montant,date,compte) VALUES (2,'achat zzz',-34.5 , '2018-04-25' , 1)

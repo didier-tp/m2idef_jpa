@@ -8,7 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -18,10 +19,11 @@ import javax.persistence.Table;
 @Table(name="Compte")
 @NamedQueries({
 @NamedQuery(name="Compte.findByNumCli",
- query="SELECT cpt FROM Compte cpt WHERE cpt.client.numero = :numCli") ,
+ query="SELECT cpt FROM Client cli INNER JOIN cli.listeComptes cpt WHERE cli.numero = :numCli") ,
 @NamedQuery(name="Compte.findOperationsByNumCompte",
  query="SELECT op FROM Compte cpt INNER JOIN cpt.listeOperations op WHERE cpt.numero = :numCpt")
 })
+//old 1-n Compte.findByNumCli query : SELECT cpt FROM Compte cpt WHERE cpt.client.numero = :numCli
 public class Compte {
 	
 	@Id
@@ -32,10 +34,11 @@ public class Compte {
 	
 	private Double solde;
 	
-	@ManyToOne
-	@JoinColumn(name="client") 
-	//ou bien @JoinColumn(name="numClient")
-	private Client client;
+	@ManyToMany 
+	@JoinTable(name = "Compte_Client",   
+	  joinColumns = {@JoinColumn(name = "numCpt")},                    
+	  inverseJoinColumns = {@JoinColumn(name = "numCli")}) 
+	private List<Client> listeClients; 
 	
 	@OneToMany(mappedBy="compte", fetch=FetchType.LAZY)
 	private List<Operation> listeOperations; //avec get/set
@@ -71,12 +74,14 @@ public class Compte {
 		this.solde = solde;
 	}
 
-	public Client getClient() {
-		return client;
+	
+
+	public List<Client> getListeClients() {
+		return listeClients;
 	}
 
-	public void setClient(Client client) {
-		this.client = client;
+	public void setListeClients(List<Client> listeClients) {
+		this.listeClients = listeClients;
 	}
 
 	public List<Operation> getListeOperations() {

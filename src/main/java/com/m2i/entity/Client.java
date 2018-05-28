@@ -8,8 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 // javax.persistence. = JPA
@@ -36,8 +36,7 @@ public class Client {
 	//salaire d'un client (ou employe)
 	private Double salaire; //avec get/set
 	
-	//@OneToMany(mappedBy="client", fetch=FetchType.EAGER)
-	@OneToMany(mappedBy="client", fetch=FetchType.LAZY)
+	@ManyToMany(mappedBy="listeClients", fetch=FetchType.LAZY)
     private List<Compte> listeComptes; //avec get/set
 
 	@OneToOne(mappedBy="client")

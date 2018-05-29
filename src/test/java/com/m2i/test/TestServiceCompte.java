@@ -2,6 +2,8 @@ package com.m2i.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -17,6 +19,9 @@ import com.m2i.service.IServiceCompte;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/beans.xml")
 public class TestServiceCompte {
+	
+	private static Logger logger = LoggerFactory.getLogger(TestServiceCompte.class);
+	
 	@Autowired
 	private IServiceCompte service; //à tester
 	
@@ -24,11 +29,11 @@ public class TestServiceCompte {
 	public void testBonVirement(){
 		Double solde1Avant = service.rechercherCompteSelonNum(1L).getSolde();
 		Double solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		System.out.println("avant bon virement: solde1="+solde1Avant + ",solde2=" + solde2);
+		logger.debug("avant bon virement: solde1="+solde1Avant + ",solde2=" + solde2);
 		service.effectuerVirement(1L, 2L, 50.0);
 		Double solde1Apres = service.rechercherCompteSelonNum(1L).getSolde();
 		solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		System.out.println("apres bon virement: solde1="+solde1Apres + ",solde2=" + solde2);
+		logger.debug("apres bon virement: solde1="+solde1Apres + ",solde2=" + solde2);
 	    //Assert.assertEquals() pour tester sir solde1Apres = solde1Avant - 50 à 0.00001 pres
 	}
 	

@@ -1,0 +1,2 @@
+2018-05-29 14:15:52,864 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 14:15:52,907 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7

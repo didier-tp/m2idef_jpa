@@ -388,3 +388,66 @@
 2018-05-29 16:21:23,009 DEBUG main org.hibernate.SQL - update Client set nom=?, prenom=?, salaire=? where numero=?
 2018-05-29 16:21:23,009 DEBUG main org.hibernate.SQL - update Client set nom=?, prenom=?, salaire=? where numero=?
 2018-05-29 16:21:23,025 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:48,659 DEBUG main org.hibernate.SQL - alter table Compte_Client drop foreign key FK5t08m5gifmonca6dv5swelukv
+2018-05-29 16:26:48,674 DEBUG main org.hibernate.SQL - alter table Compte_Client drop foreign key FKg9bqqekorv6hov9ol27xqrk1t
+2018-05-29 16:26:48,690 DEBUG main org.hibernate.SQL - alter table Operation drop foreign key FKd6kh4ry058kfoefdqkkj87ewa
+2018-05-29 16:26:48,706 DEBUG main org.hibernate.SQL - alter table Pays drop foreign key FK62tq58js1n8wb5gftxq36xqga
+2018-05-29 16:26:48,706 DEBUG main org.hibernate.SQL - drop table if exists Adresse
+2018-05-29 16:26:48,721 DEBUG main org.hibernate.SQL - drop table if exists Client
+2018-05-29 16:26:48,737 DEBUG main org.hibernate.SQL - drop table if exists Compte
+2018-05-29 16:26:48,753 DEBUG main org.hibernate.SQL - drop table if exists Compte_Client
+2018-05-29 16:26:48,768 DEBUG main org.hibernate.SQL - drop table if exists Devise
+2018-05-29 16:26:48,784 DEBUG main org.hibernate.SQL - drop table if exists Operation
+2018-05-29 16:26:48,799 DEBUG main org.hibernate.SQL - drop table if exists Pays
+2018-05-29 16:26:48,815 DEBUG main org.hibernate.SQL - create table Adresse (idAdresse bigint not null, codePostal varchar(12), rue varchar(255), ville varchar(255), primary key (idAdresse)) engine=InnoDB
+2018-05-29 16:26:48,846 DEBUG main org.hibernate.SQL - create table Client (numero bigint not null auto_increment, nom varchar(32), prenom varchar(32), salaire double precision, primary key (numero)) engine=InnoDB
+2018-05-29 16:26:48,862 DEBUG main org.hibernate.SQL - create table Compte (typeCompte varchar(31) not null, numero bigint not null auto_increment, label varchar(255), solde double precision, apportMensuel double precision, tauxInteret double precision, primary key (numero)) engine=InnoDB
+2018-05-29 16:26:48,893 DEBUG main org.hibernate.SQL - create table Compte_Client (numCpt bigint not null, numCli bigint not null) engine=InnoDB
+2018-05-29 16:26:48,909 DEBUG main org.hibernate.SQL - create table Devise (codeDevise varchar(6) not null, dchange double precision, monnaie varchar(64), primary key (codeDevise)) engine=InnoDB
+2018-05-29 16:26:48,940 DEBUG main org.hibernate.SQL - create table Operation (id bigint not null auto_increment, date date, label varchar(255), montant double precision, compte bigint, primary key (id)) engine=InnoDB
+2018-05-29 16:26:48,956 DEBUG main org.hibernate.SQL - create table Pays (codePays varchar(255) not null, nom varchar(255), devise varchar(6), primary key (codePays)) engine=InnoDB
+2018-05-29 16:26:48,987 DEBUG main org.hibernate.SQL - alter table Compte_Client add constraint FK5t08m5gifmonca6dv5swelukv foreign key (numCli) references Client (numero)
+2018-05-29 16:26:49,065 DEBUG main org.hibernate.SQL - alter table Compte_Client add constraint FKg9bqqekorv6hov9ol27xqrk1t foreign key (numCpt) references Compte (numero)
+2018-05-29 16:26:49,190 DEBUG main org.hibernate.SQL - alter table Operation add constraint FKd6kh4ry058kfoefdqkkj87ewa foreign key (compte) references Compte (numero)
+2018-05-29 16:26:49,268 DEBUG main org.hibernate.SQL - alter table Pays add constraint FK62tq58js1n8wb5gftxq36xqga foreign key (devise) references Devise (codeDevise)
+2018-05-29 16:26:49,331 DEBUG main org.hibernate.SQL - INSERT INTO Devise(codeDevise,monnaie,dChange) VALUES ('USD','dollar',1.0)
+2018-05-29 16:26:49,346 DEBUG main org.hibernate.SQL - INSERT INTO Devise(codeDevise,monnaie,dChange) VALUES ('GBP','livre',0.9)
+2018-05-29 16:26:49,346 DEBUG main org.hibernate.SQL - INSERT INTO Devise(codeDevise,monnaie,dChange) VALUES ('EUR','euro',1.1)
+2018-05-29 16:26:49,346 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('fr', 'France', 'EUR')
+2018-05-29 16:26:49,346 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('es', 'Espagne', 'EUR')
+2018-05-29 16:26:49,346 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('de', 'Allemagne', 'EUR')
+2018-05-29 16:26:49,362 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('it', 'Italie', 'EUR')
+2018-05-29 16:26:49,362 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('uk', 'Royaume Uni', 'GBP')
+2018-05-29 16:26:49,362 DEBUG main org.hibernate.SQL - INSERT INTO Client(numero,nom,prenom,salaire) VALUES (1,'dupond','eric',2000)
+2018-05-29 16:26:49,362 DEBUG main org.hibernate.SQL - INSERT INTO Client(numero,nom,prenom,salaire) VALUES (2,'durant','alex',2500)
+2018-05-29 16:26:49,378 DEBUG main org.hibernate.SQL - INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (1,'rue 1','75001','Paris')
+2018-05-29 16:26:49,378 DEBUG main org.hibernate.SQL - INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (2,'rue 2','69000','Lyon')
+2018-05-29 16:26:49,378 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (1,'compte courant',250.7,'COURANT')
+2018-05-29 16:26:49,393 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (3,'compte courant',0.7,'COURANT')
+2018-05-29 16:26:49,393 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte,tauxInteret)  VALUES (4,'livret A xy',345.6, 'LivretA' , 1.0)
+2018-05-29 16:26:49,409 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte,tauxInteret,apportMensuel) VALUES (2,'compte PEL xyz',50.7,'PEL',1.5,50.0)
+2018-05-29 16:26:49,409 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (1,1)
+2018-05-29 16:26:49,424 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (2,1)
+2018-05-29 16:26:49,424 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (3,1)
+2018-05-29 16:26:49,440 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (4,1)
+2018-05-29 16:26:49,440 DEBUG main org.hibernate.SQL - INSERT INTO Operation(id,label,montant,date,compte) VALUES (1,'achat xy',-12.5 , '2018-03-20' , 1)
+2018-05-29 16:26:49,440 DEBUG main org.hibernate.SQL - INSERT INTO Operation(id,label,montant,date,compte) VALUES (2,'achat zzz',-34.5 , '2018-04-25' , 1)
+2018-05-29 16:26:49,456 DEBUG main org.hibernate.SQL - INSERT INTO Operation(id,label,montant,date,compte) VALUES (3,'achat xyz',-4.5 , '2018-02-13' , 2)
+2018-05-29 16:26:49,862 DEBUG main org.hibernate.SQL - insert into Client (nom, prenom, salaire) values (?, ?, ?)
+2018-05-29 16:26:49,893 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:49,918 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_, client0_.nom as nom2_1_, client0_.prenom as prenom3_1_, client0_.salaire as salaire4_1_ from Client client0_
+2018-05-29 16:26:49,918 DEBUG main org.hibernate.SQL - select adresse0_.idAdresse as idAdress1_0_0_, adresse0_.codePostal as codePost2_0_0_, adresse0_.rue as rue3_0_0_, adresse0_.ville as ville4_0_0_, client1_.numero as numero1_1_1_, client1_.nom as nom2_1_1_, client1_.prenom as prenom3_1_1_, client1_.salaire as salaire4_1_1_ from Adresse adresse0_ left outer join Client client1_ on adresse0_.idAdresse=client1_.numero where adresse0_.idAdresse=?
+2018-05-29 16:26:49,918 DEBUG main org.hibernate.SQL - select adresse0_.idAdresse as idAdress1_0_0_, adresse0_.codePostal as codePost2_0_0_, adresse0_.rue as rue3_0_0_, adresse0_.ville as ville4_0_0_, client1_.numero as numero1_1_1_, client1_.nom as nom2_1_1_, client1_.prenom as prenom3_1_1_, client1_.salaire as salaire4_1_1_ from Adresse adresse0_ left outer join Client client1_ on adresse0_.idAdresse=client1_.numero where adresse0_.idAdresse=?
+2018-05-29 16:26:49,934 DEBUG main org.hibernate.SQL - select adresse0_.idAdresse as idAdress1_0_0_, adresse0_.codePostal as codePost2_0_0_, adresse0_.rue as rue3_0_0_, adresse0_.ville as ville4_0_0_, client1_.numero as numero1_1_1_, client1_.nom as nom2_1_1_, client1_.prenom as prenom3_1_1_, client1_.salaire as salaire4_1_1_ from Adresse adresse0_ left outer join Client client1_ on adresse0_.idAdresse=client1_.numero where adresse0_.idAdresse=?
+2018-05-29 16:26:49,934 DEBUG main org.hibernate.SQL - insert into Client (nom, prenom, salaire) values (?, ?, ?)
+2018-05-29 16:26:49,949 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:49,949 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_ from Client client0_ where client0_.numero=?
+2018-05-29 16:26:49,949 DEBUG main org.hibernate.SQL - select adresse0_.idAdresse as idAdress1_0_0_, adresse0_.codePostal as codePost2_0_0_, adresse0_.rue as rue3_0_0_, adresse0_.ville as ville4_0_0_ from Adresse adresse0_ where adresse0_.idAdresse=?
+2018-05-29 16:26:50,012 DEBUG main org.hibernate.SQL - update Client set nom=?, prenom=?, salaire=? where numero=?
+2018-05-29 16:26:50,027 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:50,027 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:50,043 DEBUG main org.hibernate.SQL - delete from Client where numero=?
+2018-05-29 16:26:50,043 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:50,059 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, adresse1_.idAdresse as idAdress1_0_1_, adresse1_.codePostal as codePost2_0_1_, adresse1_.rue as rue3_0_1_, adresse1_.ville as ville4_0_1_ from Client client0_ left outer join Adresse adresse1_ on client0_.numero=adresse1_.idAdresse where client0_.numero=?
+2018-05-29 16:26:50,059 DEBUG main org.hibernate.SQL - select client0_.numero as numero1_1_0_, compte2_.numero as numero2_2_1_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, compte2_.label as label3_2_1_, compte2_.solde as solde4_2_1_, compte2_.apportMensuel as apportMe5_2_1_, compte2_.tauxInteret as tauxInte6_2_1_, compte2_.typeCompte as typeComp1_2_1_, listecompt1_.numCli as numCli2_3_0__, listecompt1_.numCpt as numCpt1_3_0__ from Client client0_ inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero where client0_.numero=?
+2018-05-29 16:26:50,074 DEBUG main org.hibernate.SQL - select adresse0_.idAdresse as idAdress1_0_0_, adresse0_.codePostal as codePost2_0_0_, adresse0_.rue as rue3_0_0_, adresse0_.ville as ville4_0_0_, client1_.numero as numero1_1_1_, client1_.nom as nom2_1_1_, client1_.prenom as prenom3_1_1_, client1_.salaire as salaire4_1_1_ from Adresse adresse0_ left outer join Client client1_ on adresse0_.idAdresse=client1_.numero where adresse0_.idAdresse=?

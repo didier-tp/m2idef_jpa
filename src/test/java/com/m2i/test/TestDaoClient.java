@@ -5,6 +5,8 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -21,6 +23,9 @@ import com.m2i.entity.Compte;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/beans.xml")
 public class TestDaoClient {
+	
+	private static Logger logger = LoggerFactory.getLogger(TestDaoClient.class);
+	
 	@Autowired
 	private IDaoClient dao; //à tester
 	
@@ -34,17 +39,17 @@ public class TestDaoClient {
 		//avec @GeneratedValue(strategy=GenerationType.IDENTITY)
 		Long numero = c.getNumero();
 		Client cRelu = dao.findClientByNumero(numero);
-		System.out.println(cRelu.toString()); //avec toString() bien codé sur Client
+		logger.debug(cRelu.toString()); //avec toString() bien codé sur Client
 		List<Client> listeClient = dao.findAllClient();
 		for(Client cli : listeClient){
-			System.out.println("\t"+cli);
+			logger.debug("\t"+cli);
 		}
 	}
 	
 	@Test
 	public void testClientAvecAdresse(){
 		Client c1 = dao.findClientByNumero(1L);
-		System.out.println("adresse du client 1:" + c1.getAdresse().toString());
+		logger.debug("adresse du client 1:" + c1.getAdresse().toString());
 	}
 	
 	@Test
@@ -52,7 +57,7 @@ public class TestDaoClient {
 		Client c1 = dao.findClientWithComptesByNumero(1L);
 		System.out.println("c1= "+ c1.toString());
 		for(Compte c : c1.getListeComptes()){
-			System.out.println("\t"+ c.toString());
+			logger.debug("\t"+ c.toString());
 		}
 	}
 	
@@ -74,7 +79,7 @@ public class TestDaoClient {
 		Long numero = c.getNumero();
 		//1b. verif ajout via relecture
 		Client cRelu = dao.findClientByNumero(numero);
-		System.out.println(cRelu.toString()); 
+		logger.debug(cRelu.toString()); 
 		Assert.assertTrue(cRelu.getPrenom().equals("olie"));
 		//2b. update
 		c.setPrenom("**nouveauPrenom**");
@@ -82,12 +87,12 @@ public class TestDaoClient {
 		//2c. verif mise à jour via relecture
 		cRelu = dao.findClientByNumero(numero);
 		Assert.assertTrue(cRelu.getPrenom().equals("**nouveauPrenom**"));
-		System.out.println(cRelu.toString()); 
+		logger.debug(cRelu.toString()); 
 		//3a. suppression
 		dao.deleteClient(numero);
 		//3b. verif suppression
 		cRelu=dao.findClientByNumero(numero);
 		Assert.assertTrue(cRelu==null);
-		System.out.println("cRelu normalement null="+cRelu);
+		logger.debug("cRelu normalement null="+cRelu);
 	}
 }

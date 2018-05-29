@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.m2i.dao.IDaoCompte;
 import com.m2i.entity.Compte;
-import com.m2i.test.TestServiceCompte;
+import com.m2i.test.ServiceCompteTest;
 
 @Service
 public class ServiceCompteImpl implements IServiceCompte {
@@ -35,7 +35,8 @@ public class ServiceCompteImpl implements IServiceCompte {
 			//cptCred.setSolde(cptCred.getSolde() + montant);
 			//daoCompte.updateCompte(cptCred); //inutile dans version avec @Transactional
 		} catch (Exception e) {
-			logger.error("echec virement",e);
+			//logger.error("echec virement",e);
+			logger.error("echec virement " + e.getMessage());
 			throw new RuntimeException("echec virement",e);
 		}
 	}

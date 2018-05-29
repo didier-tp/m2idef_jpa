@@ -18,9 +18,9 @@ import com.m2i.service.IServiceCompte;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="/beans.xml")
-public class TestServiceCompte {
+public class ServiceCompteTest {
 	
-	private static Logger logger = LoggerFactory.getLogger(TestServiceCompte.class);
+	private static Logger logger = LoggerFactory.getLogger(ServiceCompteTest.class);
 	
 	@Autowired
 	private IServiceCompte service; //à tester

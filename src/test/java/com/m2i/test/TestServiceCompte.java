@@ -22,13 +22,14 @@ public class TestServiceCompte {
 	
 	@Test
 	public void testBonVirement(){
-		Double solde1 = service.rechercherCompteSelonNum(1L).getSolde();
+		Double solde1Avant = service.rechercherCompteSelonNum(1L).getSolde();
 		Double solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		System.out.println("avant bon virement: solde1="+solde1 + ",solde2=" + solde2);
+		System.out.println("avant bon virement: solde1="+solde1Avant + ",solde2=" + solde2);
 		service.effectuerVirement(1L, 2L, 50.0);
-		solde1 = service.rechercherCompteSelonNum(1L).getSolde();
+		Double solde1Apres = service.rechercherCompteSelonNum(1L).getSolde();
 		solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		System.out.println("apres bon virement: solde1="+solde1 + ",solde2=" + solde2);
+		System.out.println("apres bon virement: solde1="+solde1Apres + ",solde2=" + solde2);
+	    //Assert.assertEquals() pour tester sir solde1Apres = solde1Avant - 50 à 0.00001 pres
 	}
 	
 	@Test

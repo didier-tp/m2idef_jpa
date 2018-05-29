@@ -85,3 +85,10 @@
 2018-05-29 14:41:03,775 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
 2018-05-29 14:46:35,795 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
 2018-05-29 14:46:35,838 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 14:54:31,410 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 14:54:31,459 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 15:08:59,693 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 15:08:59,734 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 15:08:59,750 DEBUG main com.m2i.test.TestServiceCompte - avant mauvais virement: solde1=200.7,solde2=100.7
+2018-05-29 15:08:59,812 DEBUG main com.m2i.test.TestServiceCompte - virement erroné avec numCptCred=-2 inexistant
+2018-05-29 15:08:59,812 DEBUG main com.m2i.test.TestServiceCompte - apres mauvais virement: solde1=200.7,solde2=100.7

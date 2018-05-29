@@ -1,5 +1,6 @@
 package com.m2i.test;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -8,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.m2i.entity.Client;
 import com.m2i.service.IServiceCompte;
 
 /*
@@ -28,28 +28,32 @@ public class TestServiceCompte {
 	@Test
 	public void testBonVirement(){
 		Double solde1Avant = service.rechercherCompteSelonNum(1L).getSolde();
-		Double solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		logger.debug("avant bon virement: solde1="+solde1Avant + ",solde2=" + solde2);
+		Double solde2Avant = service.rechercherCompteSelonNum(2L).getSolde();
+		logger.debug("avant bon virement: solde1="+solde1Avant + ",solde2=" + solde2Avant);
 		service.effectuerVirement(1L, 2L, 50.0);
 		Double solde1Apres = service.rechercherCompteSelonNum(1L).getSolde();
-		solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		logger.debug("apres bon virement: solde1="+solde1Apres + ",solde2=" + solde2);
-	    //Assert.assertEquals() pour tester sir solde1Apres = solde1Avant - 50 à 0.00001 pres
+		Double solde2Apres = service.rechercherCompteSelonNum(2L).getSolde();
+		logger.debug("apres bon virement: solde1="+solde1Apres + ",solde2=" + solde2Apres);
+	    Assert.assertEquals(solde1Avant - 50,solde1Apres,0.00001);
+	    Assert.assertEquals(solde2Avant + 50,solde2Apres,0.00001);
 	}
 	
 	@Test
 	public void testMauvaisVirement(){
-		Double solde1 = service.rechercherCompteSelonNum(1L).getSolde();
-		Double solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		System.out.println("avant mauvais virement: solde1="+solde1 + ",solde2=" + solde2);
+		Double solde1Avant = service.rechercherCompteSelonNum(1L).getSolde();
+		Double solde2Avant = service.rechercherCompteSelonNum(2L).getSolde();
+		logger.debug("avant mauvais virement: solde1="+solde1Avant + ",solde2=" + solde2Avant);
 		try {
 			service.effectuerVirement(1L, -2L, 50.0);
+			Assert.fail("une exception aurait du remonter");
 		} catch (Exception e) {
-			System.err.println("virement erroné avec numCptCred=-2 inexistant");
+			logger.debug("virement erroné avec numCptCred=-2 inexistant");
 		}
-		solde1 = service.rechercherCompteSelonNum(1L).getSolde();
-		solde2 = service.rechercherCompteSelonNum(2L).getSolde();
-		System.out.println("apres mauvais virement: solde1="+solde1 + ",solde2=" + solde2);
+		Double solde1Apres = service.rechercherCompteSelonNum(1L).getSolde();
+		Double solde2Apres = service.rechercherCompteSelonNum(2L).getSolde();
+		logger.debug("apres mauvais virement: solde1="+solde1Apres + ",solde2=" + solde2Apres);
+		Assert.assertEquals(solde1Avant - 0,solde1Apres,0.00001);//rien doit changer en base
+	    Assert.assertEquals(solde2Avant + 0,solde2Apres,0.00001);//si rollback
 	}
 	
 	/*

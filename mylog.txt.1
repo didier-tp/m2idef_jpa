@@ -1,0 +1,789 @@
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3730ab42]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : devise
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7308ffff]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : devise.change
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : devise.listePays
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : devise.listePays
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : devise.monnaie
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nom
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=com.m2i.entity.Pays)
+    - Returns
+       - EntityReturnImpl(entity=com.m2i.entity.Pays, querySpaceUid=<gen:0>, path=com.m2i.entity.Pays)
+          - EntityAttributeFetchImpl(entity=com.m2i.entity.Devise, querySpaceUid=<gen:1>, path=com.m2i.entity.Pays.devise)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.m2i.entity.Pays)
+          - SQL table alias mapping - pays0_
+          - alias suffix - 0_
+          - suffixed key columns - {codePays1_6_0_}
+          - JOIN (JoinDefinedByMetadata(devise)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.m2i.entity.Devise)
+                - SQL table alias mapping - devise1_
+                - alias suffix - 1_
+                - suffixed key columns - {codeDevi1_4_1_}
+
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity com.m2i.entity.Pays [READ]: select pays0_.codePays as codePays1_6_0_, pays0_.devise as devise3_6_0_, pays0_.nom as nom2_6_0_, devise1_.codeDevise as codeDevi1_4_1_, devise1_.dchange as dchange2_4_1_, devise1_.monnaie as monnaie3_4_1_ from Pays pays0_ left outer join Devise devise1_ on pays0_.devise=devise1_.codeDevise where pays0_.codePays=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.m2i.entity.Pays: select pays0_.codePays as codePays1_6_0_, pays0_.devise as devise3_6_0_, pays0_.nom as nom2_6_0_ from Pays pays0_ where pays0_.codePays=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.m2i.entity.Pays: select pays0_.codePays as codePays1_6_0_, pays0_.devise as devise3_6_0_, pays0_.nom as nom2_6_0_ from Pays pays0_ where pays0_.codePays=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: com.m2i.entity.Compte
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select numero from Compte where numero =?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select compte_.numero, compte_.label as label3_2_, compte_.solde as solde4_2_ from Compte compte_ where compte_.numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into Compte (label, solde, typeCompte, numero) values (?, ?, 'COURANT', ?)
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update Compte set label=?, solde=? where numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from Compte where numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Identity insert: insert into Compte (label, solde, typeCompte) values (?, ?, 'COURANT')
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@54d901aa]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : label
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeClients
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@573284a5]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3fbfbf84]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeOperations
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@23f72d88]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4bafe935]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : solde
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : apportMensuel
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : tauxInteret
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=com.m2i.entity.Compte)
+    - Returns
+       - EntityReturnImpl(entity=com.m2i.entity.Compte, querySpaceUid=<gen:0>, path=com.m2i.entity.Compte)
+          - CollectionAttributeFetchImpl(collection=com.m2i.entity.Compte.listeClients, querySpaceUid=<gen:1>, path=com.m2i.entity.Compte.listeClients)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Client, querySpaceUid=<gen:2>, path=com.m2i.entity.Compte.listeClients.<elements>)
+          - CollectionAttributeFetchImpl(collection=com.m2i.entity.Compte.listeOperations, querySpaceUid=<gen:3>, path=com.m2i.entity.Compte.listeOperations)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Operation, querySpaceUid=<gen:4>, path=com.m2i.entity.Compte.listeOperations.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.m2i.entity.Compte)
+          - SQL table alias mapping - compte0_
+          - alias suffix - 0_
+          - suffixed key columns - {numero2_2_0_}
+
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity com.m2i.entity.Compte [NONE]: select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@87b5b49]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : label
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeClients
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@507b79f7]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@64a9d48c]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeOperations
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@365a6a43]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@288cdaab]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : solde
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : apportMensuel
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : tauxInteret
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=com.m2i.entity.Compte)
+    - Returns
+       - EntityReturnImpl(entity=com.m2i.entity.Compte, querySpaceUid=<gen:0>, path=com.m2i.entity.Compte)
+          - CollectionAttributeFetchImpl(collection=com.m2i.entity.Compte.listeClients, querySpaceUid=<gen:1>, path=com.m2i.entity.Compte.listeClients)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Client, querySpaceUid=<gen:2>, path=com.m2i.entity.Compte.listeClients.<elements>)
+          - CollectionAttributeFetchImpl(collection=com.m2i.entity.Compte.listeOperations, querySpaceUid=<gen:3>, path=com.m2i.entity.Compte.listeOperations)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Operation, querySpaceUid=<gen:4>, path=com.m2i.entity.Compte.listeOperations.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.m2i.entity.Compte)
+          - SQL table alias mapping - compte0_
+          - alias suffix - 0_
+          - suffixed key columns - {numero2_2_0_}
+
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity com.m2i.entity.Compte [READ]: select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.m2i.entity.Compte: select compte0_.numero as numero2_2_1_, compte0_.label as label3_2_1_, compte0_.solde as solde4_2_1_, compte0_.apportMensuel as apportMe5_2_1_, compte0_.tauxInteret as tauxInte6_2_1_, compte0_.typeCompte as typeComp1_2_1_, listeopera1_.compte as compte5_5_3_, listeopera1_.id as id1_5_3_, listeopera1_.id as id1_5_0_, listeopera1_.compte as compte5_5_0_, listeopera1_.date as date2_5_0_, listeopera1_.label as label3_5_0_, listeopera1_.montant as montant4_5_0_ from Compte compte0_ left outer join Operation listeopera1_ on compte0_.numero=listeopera1_.compte where compte0_.numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.m2i.entity.Compte: select compte0_.numero as numero2_2_1_, compte0_.label as label3_2_1_, compte0_.solde as solde4_2_1_, compte0_.apportMensuel as apportMe5_2_1_, compte0_.tauxInteret as tauxInte6_2_1_, compte0_.typeCompte as typeComp1_2_1_, listeopera1_.compte as compte5_5_3_, listeopera1_.id as id1_5_3_, listeopera1_.id as id1_5_0_, listeopera1_.compte as compte5_5_0_, listeopera1_.date as date2_5_0_, listeopera1_.label as label3_5_0_, listeopera1_.montant as montant4_5_0_ from Compte compte0_ left outer join Operation listeopera1_ on compte0_.numero=listeopera1_.compte where compte0_.numero=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister - Static SQL for entity: com.m2i.entity.Devise
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Version select: select codeDevise from Devise where codeDevise =?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Snapshot select: select devise_.codeDevise, devise_.dchange as dchange2_4_, devise_.monnaie as monnaie3_4_ from Devise devise_ where devise_.codeDevise=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Insert 0: insert into Devise (dchange, monnaie, codeDevise) values (?, ?, ?)
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Update 0: update Devise set dchange=?, monnaie=? where codeDevise=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.entity.AbstractEntityPersister -  Delete 0: delete from Devise where codeDevise=?
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@23b3aa8c]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : change
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listePays
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6c796cc1]
+2018-05-29 14:39:50,771 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@226eba67]
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listePays.devise
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : listePays.devise
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listePays.nom
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : monnaie
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=com.m2i.entity.Devise)
+    - Returns
+       - EntityReturnImpl(entity=com.m2i.entity.Devise, querySpaceUid=<gen:0>, path=com.m2i.entity.Devise)
+          - CollectionAttributeFetchImpl(collection=com.m2i.entity.Devise.listePays, querySpaceUid=<gen:1>, path=com.m2i.entity.Devise.listePays)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Pays, querySpaceUid=<gen:2>, path=com.m2i.entity.Devise.listePays.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.m2i.entity.Devise)
+          - SQL table alias mapping - devise0_
+          - alias suffix - 0_
+          - suffixed key columns - {codeDevi1_4_0_}
+          - JOIN (JoinDefinedByMetadata(listePays)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=com.m2i.entity.Devise.listePays)
+                - SQL table alias mapping - listepays1_
+                - alias suffix - 1_
+                - suffixed key columns - {devise3_6_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - codePays1_6_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.m2i.entity.Pays)
+                      - SQL table alias mapping - listepays1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {codePays1_6_2_}
+
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity com.m2i.entity.Devise [NONE]: select devise0_.codeDevise as codeDevi1_4_0_, devise0_.dchange as dchange2_4_0_, devise0_.monnaie as monnaie3_4_0_, listepays1_.devise as devise3_6_1_, listepays1_.codePays as codePays1_6_1_, listepays1_.codePays as codePays1_6_2_, listepays1_.devise as devise3_6_2_, listepays1_.nom as nom2_6_2_ from Devise devise0_ left outer join Pays listepays1_ on devise0_.codeDevise=listepays1_.devise where devise0_.codeDevise=?
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5e5073ab]
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : change
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listePays
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@100c567f]
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@30c0d731]
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listePays.devise
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : listePays.devise
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listePays.nom
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : monnaie
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=com.m2i.entity.Devise)
+    - Returns
+       - EntityReturnImpl(entity=com.m2i.entity.Devise, querySpaceUid=<gen:0>, path=com.m2i.entity.Devise)
+          - CollectionAttributeFetchImpl(collection=com.m2i.entity.Devise.listePays, querySpaceUid=<gen:1>, path=com.m2i.entity.Devise.listePays)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Pays, querySpaceUid=<gen:2>, path=com.m2i.entity.Devise.listePays.<elements>)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.m2i.entity.Devise)
+          - SQL table alias mapping - devise0_
+          - alias suffix - 0_
+          - suffixed key columns - {codeDevi1_4_0_}
+          - JOIN (JoinDefinedByMetadata(listePays)) : <gen:0> -> <gen:1>
+             - CollectionQuerySpaceImpl(uid=<gen:1>, collection=com.m2i.entity.Devise.listePays)
+                - SQL table alias mapping - listepays1_
+                - alias suffix - 1_
+                - suffixed key columns - {devise3_6_1_}
+                - entity-element alias suffix - 2_
+                - 2_entity-element suffixed key columns - codePays1_6_2_
+                - JOIN (JoinDefinedByMetadata(elements)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.m2i.entity.Pays)
+                      - SQL table alias mapping - listepays1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {codePays1_6_2_}
+
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity com.m2i.entity.Devise [READ]: select devise0_.codeDevise as codeDevi1_4_0_, devise0_.dchange as dchange2_4_0_, devise0_.monnaie as monnaie3_4_0_, listepays1_.devise as devise3_6_1_, listepays1_.codePays as codePays1_6_1_, listepays1_.codePays as codePays1_6_2_, listepays1_.devise as devise3_6_2_, listepays1_.nom as nom2_6_2_ from Devise devise0_ left outer join Pays listepays1_ on devise0_.codeDevise=listepays1_.devise where devise0_.codeDevise=?
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity com.m2i.entity.Devise: select devise0_.codeDevise as codeDevi1_4_0_, devise0_.dchange as dchange2_4_0_, devise0_.monnaie as monnaie3_4_0_ from Devise devise0_ where devise0_.codeDevise=?
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity com.m2i.entity.Devise: select devise0_.codeDevise as codeDevi1_4_0_, devise0_.dchange as dchange2_4_0_, devise0_.monnaie as monnaie3_4_0_ from Devise devise0_ where devise0_.codeDevise=?
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@32f0c7f8]
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@504e1599]
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : devise
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : devise
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nom
+2018-05-29 14:39:50,786 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(collection=com.m2i.entity.Devise.listePays)
+    - Returns
+       - CollectionReturnImpl(collection=com.m2i.entity.Devise.listePays, querySpaceUid=<gen:0>, path=[com.m2i.entity.Devise.listePays])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Pays, querySpaceUid=<gen:1>, path=[com.m2i.entity.Devise.listePays].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.m2i.entity.Devise.listePays)
+          - SQL table alias mapping - listepays0_
+          - alias suffix - 0_
+          - suffixed key columns - {devise3_6_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - codePays1_6_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.m2i.entity.Pays)
+                - SQL table alias mapping - listepays0_
+                - alias suffix - 1_
+                - suffixed key columns - {codePays1_6_1_}
+
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.collection.plan.CollectionLoader - Static select for collection com.m2i.entity.Devise.listePays: select listepays0_.devise as devise3_6_0_, listepays0_.codePays as codePays1_6_0_, listepays0_.codePays as codePays1_6_1_, listepays0_.devise as devise3_6_1_, listepays0_.nom as nom2_6_1_ from Pays listepays0_ where listepays0_.devise=?
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@dab48d3]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@58a2b4c]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : compte
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : compte
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : date
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : label
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : montant
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(collection=com.m2i.entity.Compte.listeOperations)
+    - Returns
+       - CollectionReturnImpl(collection=com.m2i.entity.Compte.listeOperations, querySpaceUid=<gen:0>, path=[com.m2i.entity.Compte.listeOperations])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Operation, querySpaceUid=<gen:1>, path=[com.m2i.entity.Compte.listeOperations].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.m2i.entity.Compte.listeOperations)
+          - SQL table alias mapping - listeopera0_
+          - alias suffix - 0_
+          - suffixed key columns - {compte5_5_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_5_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.m2i.entity.Operation)
+                - SQL table alias mapping - listeopera0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_5_1_}
+
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.collection.plan.CollectionLoader - Static select for collection com.m2i.entity.Compte.listeOperations: select listeopera0_.compte as compte5_5_0_, listeopera0_.id as id1_5_0_, listeopera0_.id as id1_5_1_, listeopera0_.compte as compte5_5_1_, listeopera0_.date as date2_5_1_, listeopera0_.label as label3_5_1_, listeopera0_.montant as montant4_5_1_ from Operation listeopera0_ where listeopera0_.compte=?
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@18ac53e8]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4ca8dbfa]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeComptes
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : listeComptes
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : nom
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : prenom
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : salaire
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@76f856a8]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.codePostal
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.rue
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.ville
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.client
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@174e1b69]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.client.listeComptes
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : adresse.client.listeComptes
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.client.nom
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.client.prenom
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.client.salaire
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : adresse.client.adresse
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : adresse.client.adresse
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(collection=com.m2i.entity.Compte.listeClients)
+    - Returns
+       - CollectionReturnImpl(collection=com.m2i.entity.Compte.listeClients, querySpaceUid=<gen:0>, path=[com.m2i.entity.Compte.listeClients])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Client, querySpaceUid=<gen:1>, path=[com.m2i.entity.Compte.listeClients].<elements>)
+             - EntityAttributeFetchImpl(entity=com.m2i.entity.Adresse, querySpaceUid=<gen:2>, path=[com.m2i.entity.Compte.listeClients].<elements>.adresse)
+                - EntityAttributeFetchImpl(entity=com.m2i.entity.Client, querySpaceUid=<gen:3>, path=[com.m2i.entity.Compte.listeClients].<elements>.adresse.client)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.m2i.entity.Compte.listeClients)
+          - SQL table alias mapping - listeclien0_
+          - alias suffix - 0_
+          - suffixed key columns - {numCpt1_3_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - numero1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.m2i.entity.Client)
+                - SQL table alias mapping - client1_
+                - alias suffix - 1_
+                - suffixed key columns - {numero1_1_1_}
+                - JOIN (JoinDefinedByMetadata(adresse)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.m2i.entity.Adresse)
+                      - SQL table alias mapping - adresse2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {idAdress1_0_2_}
+                      - JOIN (JoinDefinedByMetadata(client)) : <gen:2> -> <gen:3>
+                         - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.m2i.entity.Client)
+                            - SQL table alias mapping - client3_
+                            - alias suffix - 3_
+                            - suffixed key columns - {numero1_1_3_}
+
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.collection.plan.CollectionLoader - Static select for collection com.m2i.entity.Compte.listeClients: select listeclien0_.numCpt as numCpt1_3_0_, listeclien0_.numCli as numCli2_3_0_, client1_.numero as numero1_1_1_, client1_.nom as nom2_1_1_, client1_.prenom as prenom3_1_1_, client1_.salaire as salaire4_1_1_, adresse2_.idAdresse as idAdress1_0_2_, adresse2_.codePostal as codePost2_0_2_, adresse2_.rue as rue3_0_2_, adresse2_.ville as ville4_0_2_, client3_.numero as numero1_1_3_, client3_.nom as nom2_1_3_, client3_.prenom as prenom3_1_3_, client3_.salaire as salaire4_1_3_ from Compte_Client listeclien0_ inner join Client client1_ on listeclien0_.numCli=client1_.numero left outer join Adresse adresse2_ on client1_.numero=adresse2_.idAdresse left outer join Client client3_ on adresse2_.idAdresse=client3_.numero where listeclien0_.numCpt=?
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@68f32020]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@409986fe]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : label
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeClients
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Property path deemed to be circular : listeClients
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : listeOperations
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@53dad875]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5f780a86]
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : solde
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : apportMensuel
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : tauxInteret
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(collection=com.m2i.entity.Client.listeComptes)
+    - Returns
+       - CollectionReturnImpl(collection=com.m2i.entity.Client.listeComptes, querySpaceUid=<gen:0>, path=[com.m2i.entity.Client.listeComptes])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Compte, querySpaceUid=<gen:1>, path=[com.m2i.entity.Client.listeComptes].<elements>)
+             - CollectionAttributeFetchImpl(collection=com.m2i.entity.Compte.listeOperations, querySpaceUid=<gen:2>, path=[com.m2i.entity.Client.listeComptes].<elements>.listeOperations)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=com.m2i.entity.Operation, querySpaceUid=<gen:3>, path=[com.m2i.entity.Client.listeComptes].<elements>.listeOperations.<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.m2i.entity.Client.listeComptes)
+          - SQL table alias mapping - listecompt0_
+          - alias suffix - 0_
+          - suffixed key columns - {numCli2_3_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - numero2_2_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.m2i.entity.Compte)
+                - SQL table alias mapping - compte1_
+                - alias suffix - 1_
+                - suffixed key columns - {numero2_2_1_}
+
+2018-05-29 14:39:50,802 DEBUG main org.hibernate.loader.collection.plan.CollectionLoader - Static select for collection com.m2i.entity.Client.listeComptes: select listecompt0_.numCli as numCli2_3_0_, listecompt0_.numCpt as numCpt1_3_0_, compte1_.numero as numero2_2_1_, compte1_.label as label3_2_1_, compte1_.solde as solde4_2_1_, compte1_.apportMensuel as apportMe5_2_1_, compte1_.tauxInteret as tauxInte6_2_1_, compte1_.typeCompte as typeComp1_2_1_ from Compte_Client listecompt0_ inner join Compte compte1_ on listecompt0_.numCpt=compte1_.numero where listecompt0_.numCli=?
+2018-05-29 14:39:50,849 DEBUG main org.hibernate.SQL - alter table Compte_Client drop foreign key FK5t08m5gifmonca6dv5swelukv
+2018-05-29 14:39:50,864 DEBUG main org.hibernate.SQL - alter table Compte_Client drop foreign key FKg9bqqekorv6hov9ol27xqrk1t
+2018-05-29 14:39:50,880 DEBUG main org.hibernate.SQL - alter table Operation drop foreign key FKd6kh4ry058kfoefdqkkj87ewa
+2018-05-29 14:39:50,896 DEBUG main org.hibernate.SQL - alter table Pays drop foreign key FK62tq58js1n8wb5gftxq36xqga
+2018-05-29 14:39:50,896 DEBUG main org.hibernate.SQL - drop table if exists Adresse
+2018-05-29 14:39:50,927 DEBUG main org.hibernate.SQL - drop table if exists Client
+2018-05-29 14:39:50,943 DEBUG main org.hibernate.SQL - drop table if exists Compte
+2018-05-29 14:39:50,974 DEBUG main org.hibernate.SQL - drop table if exists Compte_Client
+2018-05-29 14:39:51,005 DEBUG main org.hibernate.SQL - drop table if exists Devise
+2018-05-29 14:39:51,036 DEBUG main org.hibernate.SQL - drop table if exists Operation
+2018-05-29 14:39:51,068 DEBUG main org.hibernate.SQL - drop table if exists Pays
+2018-05-29 14:39:51,099 DEBUG main org.hibernate.SQL - create table Adresse (idAdresse bigint not null, codePostal varchar(12), rue varchar(255), ville varchar(255), primary key (idAdresse)) engine=InnoDB
+2018-05-29 14:39:51,146 DEBUG main org.hibernate.SQL - create table Client (numero bigint not null auto_increment, nom varchar(32), prenom varchar(32), salaire double precision, primary key (numero)) engine=InnoDB
+2018-05-29 14:39:51,177 DEBUG main org.hibernate.SQL - create table Compte (typeCompte varchar(31) not null, numero bigint not null auto_increment, label varchar(255), solde double precision, apportMensuel double precision, tauxInteret double precision, primary key (numero)) engine=InnoDB
+2018-05-29 14:39:51,208 DEBUG main org.hibernate.SQL - create table Compte_Client (numCpt bigint not null, numCli bigint not null) engine=InnoDB
+2018-05-29 14:39:51,271 DEBUG main org.hibernate.SQL - create table Devise (codeDevise varchar(6) not null, dchange double precision, monnaie varchar(64), primary key (codeDevise)) engine=InnoDB
+2018-05-29 14:39:51,286 DEBUG main org.hibernate.SQL - create table Operation (id bigint not null auto_increment, date date, label varchar(255), montant double precision, compte bigint, primary key (id)) engine=InnoDB
+2018-05-29 14:39:51,333 DEBUG main org.hibernate.SQL - create table Pays (codePays varchar(255) not null, nom varchar(255), devise varchar(6), primary key (codePays)) engine=InnoDB
+2018-05-29 14:39:51,364 DEBUG main org.hibernate.SQL - alter table Compte_Client add constraint FK5t08m5gifmonca6dv5swelukv foreign key (numCli) references Client (numero)
+2018-05-29 14:39:51,458 DEBUG main org.hibernate.SQL - alter table Compte_Client add constraint FKg9bqqekorv6hov9ol27xqrk1t foreign key (numCpt) references Compte (numero)
+2018-05-29 14:39:51,552 DEBUG main org.hibernate.SQL - alter table Operation add constraint FKd6kh4ry058kfoefdqkkj87ewa foreign key (compte) references Compte (numero)
+2018-05-29 14:39:51,655 DEBUG main org.hibernate.SQL - alter table Pays add constraint FK62tq58js1n8wb5gftxq36xqga foreign key (devise) references Devise (codeDevise)
+2018-05-29 14:39:51,733 INFO main org.hibernate.tool.schema.internal.SchemaCreatorImpl - HHH000476: Executing import script 'ScriptSourceInputFromUrl(file:/C:/Workspace/tpJpa/target/classes/import.sql)'
+2018-05-29 14:39:51,733 DEBUG main org.hibernate.SQL - INSERT INTO Devise(codeDevise,monnaie,dChange) VALUES ('USD','dollar',1.0)
+2018-05-29 14:39:51,733 DEBUG main org.hibernate.SQL - INSERT INTO Devise(codeDevise,monnaie,dChange) VALUES ('GBP','livre',0.9)
+2018-05-29 14:39:51,748 DEBUG main org.hibernate.SQL - INSERT INTO Devise(codeDevise,monnaie,dChange) VALUES ('EUR','euro',1.1)
+2018-05-29 14:39:51,748 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('fr', 'France', 'EUR')
+2018-05-29 14:39:51,748 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('es', 'Espagne', 'EUR')
+2018-05-29 14:39:51,748 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('de', 'Allemagne', 'EUR')
+2018-05-29 14:39:51,764 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('it', 'Italie', 'EUR')
+2018-05-29 14:39:51,764 DEBUG main org.hibernate.SQL - INSERT INTO Pays(codePays,nom,devise) VALUES ('uk', 'Royaume Uni', 'GBP')
+2018-05-29 14:39:51,764 DEBUG main org.hibernate.SQL - INSERT INTO Client(numero,nom,prenom,salaire) VALUES (1,'dupond','eric',2000)
+2018-05-29 14:39:51,764 DEBUG main org.hibernate.SQL - INSERT INTO Client(numero,nom,prenom,salaire) VALUES (2,'durant','alex',2500)
+2018-05-29 14:39:51,780 DEBUG main org.hibernate.SQL - INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (1,'rue 1','75001','Paris')
+2018-05-29 14:39:51,780 DEBUG main org.hibernate.SQL - INSERT INTO Adresse(idAdresse,rue,codePostal,ville) VALUES (2,'rue 2','69000','Lyon')
+2018-05-29 14:39:51,780 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (1,'compte courant',250.7,'COURANT')
+2018-05-29 14:39:51,780 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte) VALUES (3,'compte courant',0.7,'COURANT')
+2018-05-29 14:39:51,795 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte,tauxInteret)  VALUES (4,'livret A xy',345.6, 'LivretA' , 1.0)
+2018-05-29 14:39:51,795 DEBUG main org.hibernate.SQL - INSERT INTO Compte(numero,label,solde,typeCompte,tauxInteret,apportMensuel) VALUES (2,'compte PEL xyz',50.7,'PEL',1.5,50.0)
+2018-05-29 14:39:51,795 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (1,1)
+2018-05-29 14:39:51,795 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (2,1)
+2018-05-29 14:39:51,811 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (3,1)
+2018-05-29 14:39:51,811 DEBUG main org.hibernate.SQL - INSERT INTO Compte_Client(numCpt,numCli) VALUES (4,1)
+2018-05-29 14:39:51,811 DEBUG main org.hibernate.SQL - INSERT INTO Operation(id,label,montant,date,compte) VALUES (1,'achat xy',-12.5 , '2018-03-20' , 1)
+2018-05-29 14:39:51,811 DEBUG main org.hibernate.SQL - INSERT INTO Operation(id,label,montant,date,compte) VALUES (2,'achat zzz',-34.5 , '2018-04-25' , 1)
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.SQL - INSERT INTO Operation(id,label,montant,date,compte) VALUES (3,'achat xyz',-4.5 , '2018-02-13' , 2)
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - No JtaPlatform was specified, checking resolver
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformResolverInitiator - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.query.spi.NamedQueryRepository - Checking 4 named HQL queries
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.query.spi.NamedQueryRepository - Checking named query: Compte.findOperationsByNumCompte
+2018-05-29 14:39:51,826 DEBUG main org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - QueryTranslatorFactory : org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory@c6b2dd9
+2018-05-29 14:39:51,826 INFO main org.hibernate.hql.internal.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-05-29 14:39:51,858 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: SELECT op FROM com.m2i.entity.Compte cpt INNER JOIN cpt.listeOperations op WHERE cpt.numero = :numCpt
+2018-05-29 14:39:51,858 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,858 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'FROM'
+    |  |  +-[RANGE] Node: 'RANGE'
+    |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  |  +-[IDENT] Node: 'com'
+    |  |  |  |  |  |  \-[IDENT] Node: 'm2i'
+    |  |  |  |  |  \-[IDENT] Node: 'entity'
+    |  |  |  |  \-[IDENT] Node: 'Compte'
+    |  |  |  \-[ALIAS] Node: 'cpt'
+    |  |  \-[JOIN] Node: 'JOIN'
+    |  |     +-[INNER] Node: 'INNER'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[IDENT] Node: 'cpt'
+    |  |     |  \-[IDENT] Node: 'listeOperations'
+    |  |     \-[ALIAS] Node: 'op'
+    |  \-[SELECT] Node: 'SELECT'
+    |     \-[IDENT] Node: 'op'
+    \-[WHERE] Node: 'WHERE'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'cpt'
+          |  \-[IDENT] Node: 'numero'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'numCpt'
+
+2018-05-29 14:39:51,889 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Compte (cpt) -> compte0_
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cpt -> compte0_.numero
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : listeOperations -> org.hibernate.type.BagType(com.m2i.entity.Compte.listeOperations)
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromElementFactory - createEntityAssociation() : One to many - path = cpt.listeOperations role = com.m2i.entity.Compte.listeOperations associatedEntityName = com.m2i.entity.Operation
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Operation (op) -> listeopera1_
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromClause - addJoinByPathMap() : cpt.listeOperations -> FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=op,role=null,tableName=Operation,tableAlias=listeopera1_,origin=Compte compte0_,columns={compte0_.numero ,className=com.m2i.entity.Operation}}
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - dereferenceCollection() : Created new FROM element for cpt.listeOperations : Operation listeopera1_
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cpt.listeOperations -> .
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - createFromJoinElement() : -- join tree --
+ \-[JOIN_FRAGMENT] FromElement: 'Operation listeopera1_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=op,role=com.m2i.entity.Compte.listeOperations,tableName=Operation,tableAlias=listeopera1_,origin=Compte compte0_,columns={compte0_.numero ,className=com.m2i.entity.Operation}}
+
+2018-05-29 14:39:51,905 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : op -> listeopera1_.id
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cpt -> compte0_.numero
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : numero -> org.hibernate.type.LongType@5d99c6b5
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cpt.numero -> compte0_.numero
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} listeopera1_.id ) ( FromClause{level=1} ( Compte compte0_ Operation listeopera1_ ) ) ( WHERE ( = ( compte0_.numero compte0_.numero numero ) ? ) ) )
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [Compte compte0_]
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [inner join Operation listeopera1_ on compte0_.numero=listeopera1_.compte]
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (Compte,Operation)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'listeopera1_.id as id1_5_' {alias=op, className=com.m2i.entity.Operation, tableAlias=listeopera1_}
+    |  \-[SQL_TOKEN] SqlFragment: 'listeopera1_.compte as compte5_5_, listeopera1_.date as date2_5_, listeopera1_.label as label3_5_, listeopera1_.montant as montant4_5_'
+    +-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=2, fromElements=2, fromElementByClassAlias=[op, cpt], fromElementByTableAlias=[listeopera1_, compte0_], fromElementsByPath=[cpt.listeOperations], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'Compte compte0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=cpt,role=null,tableName=Compte,tableAlias=compte0_,origin=null,columns={,className=com.m2i.entity.Compte}}
+    |     \-[JOIN_FRAGMENT] FromElement: 'inner join Operation listeopera1_ on compte0_.numero=listeopera1_.compte' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=op,role=com.m2i.entity.Compte.listeOperations,tableName=Operation,tableAlias=listeopera1_,origin=Compte compte0_,columns={compte0_.numero ,className=com.m2i.entity.Operation}}
+    \-[WHERE] SqlNode: 'WHERE'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'compte0_.numero' {propertyName=numero,dereferenceType=PRIMITIVE,getPropertyPath=numero,path=cpt.numero,tableAlias=compte0_,className=com.m2i.entity.Compte,classAlias=cpt}
+          |  +-[ALIAS_REF] IdentNode: 'compte0_.numero' {alias=cpt, className=com.m2i.entity.Compte, tableAlias=compte0_}
+          |  \-[IDENT] IdentNode: 'numero' {originalText=numero}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=numCpt, expectedType=org.hibernate.type.LongType@5d99c6b5}
+
+2018-05-29 14:39:51,920 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: SELECT op FROM com.m2i.entity.Compte cpt INNER JOIN cpt.listeOperations op WHERE cpt.numero = :numCpt
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select listeopera1_.id as id1_5_, listeopera1_.compte as compte5_5_, listeopera1_.date as date2_5_, listeopera1_.label as label3_5_, listeopera1_.montant as montant4_5_ from Compte compte0_ inner join Operation listeopera1_ on compte0_.numero=listeopera1_.compte where compte0_.numero=?
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.query.spi.NamedQueryRepository - Checking named query: Operation.findOperationsByNumCompte
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: SELECT op FROM com.m2i.entity.Operation op WHERE op.compte.numero = :numCpt
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'FROM'
+    |  |  \-[RANGE] Node: 'RANGE'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[DOT] Node: '.'
+    |  |     |  |  +-[DOT] Node: '.'
+    |  |     |  |  |  +-[IDENT] Node: 'com'
+    |  |     |  |  |  \-[IDENT] Node: 'm2i'
+    |  |     |  |  \-[IDENT] Node: 'entity'
+    |  |     |  \-[IDENT] Node: 'Operation'
+    |  |     \-[ALIAS] Node: 'op'
+    |  \-[SELECT] Node: 'SELECT'
+    |     \-[IDENT] Node: 'op'
+    \-[WHERE] Node: 'WHERE'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[DOT] Node: '.'
+          |  |  +-[IDENT] Node: 'op'
+          |  |  \-[IDENT] Node: 'compte'
+          |  \-[IDENT] Node: 'numero'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'numCpt'
+
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Operation (op) -> operation0_
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : op -> operation0_.id
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : op -> operation0_.id
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : compte -> org.hibernate.type.ManyToOneType(com.m2i.entity.Compte)
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - dereferenceShortcut() : property numero in com.m2i.entity.Operation does not require a join.
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - Unresolved property path is now 'compte.numero'
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : op.compte -> operation0_.compte
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : compte.numero -> org.hibernate.type.LongType@5d99c6b5
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : op.compte.numero -> operation0_.compte
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} operation0_.id ) ( FromClause{level=1} Operation operation0_ ) ( WHERE ( = ( operation0_.compte ( operation0_.compte operation0_.id compte ) numero ) ? ) ) )
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [Operation operation0_]
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (Operation)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'operation0_.id as id1_5_' {alias=op, className=com.m2i.entity.Operation, tableAlias=operation0_}
+    |  \-[SQL_TOKEN] SqlFragment: 'operation0_.compte as compte5_5_, operation0_.date as date2_5_, operation0_.label as label3_5_, operation0_.montant as montant4_5_'
+    +-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[op], fromElementByTableAlias=[operation0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'Operation operation0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=op,role=null,tableName=Operation,tableAlias=operation0_,origin=null,columns={,className=com.m2i.entity.Operation}}
+    \-[WHERE] SqlNode: 'WHERE'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'operation0_.compte' {propertyName=numero,dereferenceType=PRIMITIVE,getPropertyPath=compte.numero,path=op.compte.numero,tableAlias=operation0_,className=com.m2i.entity.Operation,classAlias=op}
+          |  +-[DOT] DotNode: 'operation0_.compte' {propertyName=numero,dereferenceType=UNKNOWN,getPropertyPath=compte.numero,path=op.compte,tableAlias=operation0_,className=com.m2i.entity.Operation,classAlias=op}
+          |  |  +-[ALIAS_REF] IdentNode: 'operation0_.id' {alias=op, className=com.m2i.entity.Operation, tableAlias=operation0_}
+          |  |  \-[IDENT] IdentNode: 'compte' {originalText=compte}
+          |  \-[IDENT] IdentNode: 'numero' {originalText=numero}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=numCpt, expectedType=org.hibernate.type.LongType@5d99c6b5}
+
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: SELECT op FROM com.m2i.entity.Operation op WHERE op.compte.numero = :numCpt
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select operation0_.id as id1_5_, operation0_.compte as compte5_5_, operation0_.date as date2_5_, operation0_.label as label3_5_, operation0_.montant as montant4_5_ from Operation operation0_ where operation0_.compte=?
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.query.spi.NamedQueryRepository - Checking named query: Client.findByNumWithComptes
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: SELECT c FROM com.m2i.entity.Client c INNER JOIN FETCH c.listeComptes WHERE c.numero = :numCli
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'FROM'
+    |  |  +-[RANGE] Node: 'RANGE'
+    |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  |  +-[IDENT] Node: 'com'
+    |  |  |  |  |  |  \-[IDENT] Node: 'm2i'
+    |  |  |  |  |  \-[IDENT] Node: 'entity'
+    |  |  |  |  \-[IDENT] Node: 'Client'
+    |  |  |  \-[ALIAS] Node: 'c'
+    |  |  \-[JOIN] Node: 'JOIN'
+    |  |     +-[INNER] Node: 'INNER'
+    |  |     +-[FETCH] Node: 'FETCH'
+    |  |     \-[DOT] Node: '.'
+    |  |        +-[IDENT] Node: 'c'
+    |  |        \-[IDENT] Node: 'listeComptes'
+    |  \-[SELECT] Node: 'SELECT'
+    |     \-[IDENT] Node: 'c'
+    \-[WHERE] Node: 'WHERE'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'c'
+          |  \-[IDENT] Node: 'numero'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'numCli'
+
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2018-05-29 14:39:51,936 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Client (c) -> client0_
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : c -> client0_.numero
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : listeComptes -> org.hibernate.type.BagType(com.m2i.entity.Client.listeComptes)
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromElementFactory - createManyToMany() : path = c.listeComptes role = com.m2i.entity.Client.listeComptes associatedEntityName = com.m2i.entity.Compte
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Compte (<no alias>) -> compte2_
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromClause - addJoinByPathMap() : c.listeComptes -> FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - dereferenceCollection() : Created new FROM element for c.listeComptes : Compte_Client compte2_
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : c.listeComptes -> .
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - createFromJoinElement() : -- join tree --
+ \-[JOIN_FRAGMENT] FromElement: 'Compte_Client compte2_' FromElement{explicit,not a collection join,fetch join,fetch non-lazy properties,classAlias=null,role=com.m2i.entity.Client.listeComptes,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}
+
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : c -> client0_.numero
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : c -> client0_.numero
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : numero -> org.hibernate.type.LongType@5d99c6b5
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : c.numero -> client0_.numero
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} client0_.numero ) ( FromClause{level=1} ( Client client0_ Compte_Client compte2_ ) ) ( WHERE ( = ( client0_.numero client0_.numero numero ) ? ) ) )
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [Client client0_]
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero]
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (Compte,Compte_Client,Client)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'client0_.numero as numero1_1_0_' {alias=c, className=com.m2i.entity.Client, tableAlias=client0_}
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'compte2_.numero as numero2_2_1_' {FromElement{explicit,not a collection join,fetch join,fetch non-lazy properties,classAlias=null,role=com.m2i.entity.Client.listeComptes,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}}
+    |  +-[SQL_TOKEN] SqlFragment: 'client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_'
+    |  +-[SQL_TOKEN] SqlFragment: 'compte2_.label as label3_2_1_, compte2_.solde as solde4_2_1_, compte2_.apportMensuel as apportMe5_2_1_, compte2_.tauxInteret as tauxInte6_2_1_, compte2_.typeCompte as typeComp1_2_1_'
+    |  \-[SQL_TOKEN] SqlFragment: 'listecompt1_.numCli as numCli2_3_0__, listecompt1_.numCpt as numCpt1_3_0__'
+    +-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=2, fromElements=2, fromElementByClassAlias=[c], fromElementByTableAlias=[compte2_, client0_], fromElementsByPath=[c.listeComptes], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'Client client0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=c,role=null,tableName=Client,tableAlias=client0_,origin=null,columns={,className=com.m2i.entity.Client}}
+    |     \-[JOIN_FRAGMENT] FromElement: 'inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero' FromElement{explicit,not a collection join,fetch join,fetch non-lazy properties,classAlias=null,role=com.m2i.entity.Client.listeComptes,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}
+    \-[WHERE] SqlNode: 'WHERE'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'client0_.numero' {propertyName=numero,dereferenceType=PRIMITIVE,getPropertyPath=numero,path=c.numero,tableAlias=client0_,className=com.m2i.entity.Client,classAlias=c}
+          |  +-[ALIAS_REF] IdentNode: 'client0_.numero' {alias=c, className=com.m2i.entity.Client, tableAlias=client0_}
+          |  \-[IDENT] IdentNode: 'numero' {originalText=numero}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=numCli, expectedType=org.hibernate.type.LongType@5d99c6b5}
+
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: SELECT c FROM com.m2i.entity.Client c INNER JOIN FETCH c.listeComptes WHERE c.numero = :numCli
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select client0_.numero as numero1_1_0_, compte2_.numero as numero2_2_1_, client0_.nom as nom2_1_0_, client0_.prenom as prenom3_1_0_, client0_.salaire as salaire4_1_0_, compte2_.label as label3_2_1_, compte2_.solde as solde4_2_1_, compte2_.apportMensuel as apportMe5_2_1_, compte2_.tauxInteret as tauxInte6_2_1_, compte2_.typeCompte as typeComp1_2_1_, listecompt1_.numCli as numCli2_3_0__, listecompt1_.numCpt as numCpt1_3_0__ from Client client0_ inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero where client0_.numero=?
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.query.spi.NamedQueryRepository - Checking named query: Compte.findByNumCli
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: SELECT cpt FROM com.m2i.entity.Client cli INNER JOIN cli.listeComptes cpt WHERE cli.numero = :numCli
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  +-[FROM] Node: 'FROM'
+    |  |  +-[RANGE] Node: 'RANGE'
+    |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  +-[DOT] Node: '.'
+    |  |  |  |  |  |  +-[IDENT] Node: 'com'
+    |  |  |  |  |  |  \-[IDENT] Node: 'm2i'
+    |  |  |  |  |  \-[IDENT] Node: 'entity'
+    |  |  |  |  \-[IDENT] Node: 'Client'
+    |  |  |  \-[ALIAS] Node: 'cli'
+    |  |  \-[JOIN] Node: 'JOIN'
+    |  |     +-[INNER] Node: 'INNER'
+    |  |     +-[DOT] Node: '.'
+    |  |     |  +-[IDENT] Node: 'cli'
+    |  |     |  \-[IDENT] Node: 'listeComptes'
+    |  |     \-[ALIAS] Node: 'cpt'
+    |  \-[SELECT] Node: 'SELECT'
+    |     \-[IDENT] Node: 'cpt'
+    \-[WHERE] Node: 'WHERE'
+       \-[EQ] Node: '='
+          +-[DOT] Node: '.'
+          |  +-[IDENT] Node: 'cli'
+          |  \-[IDENT] Node: 'numero'
+          \-[COLON] Node: ':'
+             \-[IDENT] Node: 'numCli'
+
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Client (cli) -> client0_
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cli -> client0_.numero
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : listeComptes -> org.hibernate.type.BagType(com.m2i.entity.Client.listeComptes)
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromElementFactory - createManyToMany() : path = cli.listeComptes role = com.m2i.entity.Client.listeComptes associatedEntityName = com.m2i.entity.Compte
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : com.m2i.entity.Compte (cpt) -> compte2_
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromClause - addJoinByPathMap() : cli.listeComptes -> FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=cpt,role=null,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - dereferenceCollection() : Created new FROM element for cli.listeComptes : Compte_Client compte2_
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cli.listeComptes -> .
+2018-05-29 14:39:51,951 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - createFromJoinElement() : -- join tree --
+ \-[JOIN_FRAGMENT] FromElement: 'Compte_Client compte2_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=cpt,role=com.m2i.entity.Client.listeComptes,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}
+
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cpt -> compte2_.numero
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cli -> client0_.numero
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : numero -> org.hibernate.type.LongType@5d99c6b5
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : cli.numero -> client0_.numero
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( {select clause} compte2_.numero ) ( FromClause{level=1} ( Client client0_ Compte_Client compte2_ ) ) ( WHERE ( = ( client0_.numero client0_.numero numero ) ? ) ) )
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [Client client0_]
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero]
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (Compte,Compte_Client,Client)
+    +-[SELECT_CLAUSE] SelectClause: '{select clause}'
+    |  +-[ALIAS_REF] IdentNode: 'compte2_.numero as numero2_2_' {alias=cpt, className=com.m2i.entity.Compte, tableAlias=compte2_}
+    |  \-[SQL_TOKEN] SqlFragment: 'compte2_.label as label3_2_, compte2_.solde as solde4_2_, compte2_.apportMensuel as apportMe5_2_, compte2_.tauxInteret as tauxInte6_2_, compte2_.typeCompte as typeComp1_2_'
+    +-[FROM] FromClause: 'FROM' FromClause{level=1, fromElementCounter=2, fromElements=2, fromElementByClassAlias=[cli, cpt], fromElementByTableAlias=[compte2_, client0_], fromElementsByPath=[cli.listeComptes], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'Client client0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=cli,role=null,tableName=Client,tableAlias=client0_,origin=null,columns={,className=com.m2i.entity.Client}}
+    |     \-[JOIN_FRAGMENT] FromElement: 'inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=cpt,role=com.m2i.entity.Client.listeComptes,tableName=Compte,tableAlias=compte2_,origin=Client client0_,columns={client0_.numero ,className=com.m2i.entity.Compte}}
+    \-[WHERE] SqlNode: 'WHERE'
+       \-[EQ] BinaryLogicOperatorNode: '='
+          +-[DOT] DotNode: 'client0_.numero' {propertyName=numero,dereferenceType=PRIMITIVE,getPropertyPath=numero,path=cli.numero,tableAlias=client0_,className=com.m2i.entity.Client,classAlias=cli}
+          |  +-[ALIAS_REF] IdentNode: 'client0_.numero' {alias=cli, className=com.m2i.entity.Client, tableAlias=client0_}
+          |  \-[IDENT] IdentNode: 'numero' {originalText=numero}
+          \-[NAMED_PARAM] ParameterNode: '?' {name=numCli, expectedType=org.hibernate.type.LongType@5d99c6b5}
+
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - HQL: SELECT cpt FROM com.m2i.entity.Client cli INNER JOIN cli.listeComptes cpt WHERE cli.numero = :numCli
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - SQL: select compte2_.numero as numero2_2_, compte2_.label as label3_2_, compte2_.solde as solde4_2_, compte2_.apportMensuel as apportMe5_2_, compte2_.tauxInteret as tauxInte6_2_, compte2_.typeCompte as typeComp1_2_ from Client client0_ inner join Compte_Client listecompt1_ on client0_.numero=listecompt1_.numCli inner join Compte compte2_ on listecompt1_.numCpt=compte2_.numero where client0_.numero=?
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.hql.internal.ast.ErrorTracker - throwQueryException() : no errors
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.query.spi.NamedQueryRepository - Checking 0 named SQL queries
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.internal.SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@7173ae5b
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.internal.SessionFactoryRegistry - Registering SessionFactory: 7a22825d-6d04-4b06-88b3-31797ad175b2 (<unnamed>)
+2018-05-29 14:39:51,967 DEBUG main org.hibernate.internal.SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
+2018-05-29 14:39:52,215 DEBUG main org.hibernate.stat.internal.StatisticsInitiator - Statistics initialized [enabled=false]
+2018-05-29 14:39:52,231 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,231 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,231 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,246 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,246 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#1
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,262 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#1], was: [com.m2i.entity.Compte.listeClients#1] (uninitialized)
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#1], was: [com.m2i.entity.Compte.listeOperations#1] (uninitialized)
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=1, solde=250.7, label=compte courant, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#2
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#2], was: [com.m2i.entity.Compte.listeClients#2] (uninitialized)
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#2], was: [com.m2i.entity.Compte.listeOperations#2] (uninitialized)
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,278 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=2, solde=50.7, label=compte PEL xyz, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,293 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#1
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#2
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,293 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,309 DEBUG main org.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2018-05-29 14:39:52,309 DEBUG main org.hibernate.SQL - insert into Operation (compte, date, label, montant) values (?, ?, ?, ?)
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.id.IdentifierGeneratorHelper - Natively generated identity: 4
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.spi.ActionQueue - Executing identity-insert immediately
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.SQL - insert into Operation (compte, date, label, montant) values (?, ?, ?, ?)
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.id.IdentifierGeneratorHelper - Natively generated identity: 5
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.spi.CollectionEntry - Collection dirty: [com.m2i.entity.Compte.listeOperations#1]
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.spi.CollectionEntry - Collection dirty: [com.m2i.entity.Compte.listeOperations#2]
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#1], was: [com.m2i.entity.Compte.listeClients#1] (uninitialized)
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#1], was: [com.m2i.entity.Compte.listeOperations#1] (uninitialized)
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#2], was: [com.m2i.entity.Compte.listeClients#2] (uninitialized)
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#2], was: [com.m2i.entity.Compte.listeOperations#2] (uninitialized)
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 2 updates, 0 deletions to 4 objects
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 2 updates, 0 removals to 4 collections
+2018-05-29 14:39:52,371 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Operation{date=Tue May 29 14:39:52 CEST 2018, montant=-50.0, id=4, label=debit suite a virement de 50.0 du compte 1 vers compte 2, compte=com.m2i.entity.Compte#1}
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Operation{date=Tue May 29 14:39:52 CEST 2018, montant=50.0, id=5, label=credit suite a virement de 50.0 du compte 1 vers compte 2, compte=com.m2i.entity.Compte#2}
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=2, solde=100.7, label=compte PEL xyz, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=1, solde=200.7, label=compte courant, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.SQL - update Compte set label=?, solde=? where numero=?
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.SQL - update Compte set label=?, solde=?, apportMensuel=?, tauxInteret=? where numero=?
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,387 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#1
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#1], was: [com.m2i.entity.Compte.listeClients#1] (uninitialized)
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#1], was: [com.m2i.entity.Compte.listeOperations#1] (uninitialized)
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=1, solde=200.7, label=compte courant, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#2
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#2], was: [com.m2i.entity.Compte.listeClients#2] (uninitialized)
+2018-05-29 14:39:52,403 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#2], was: [com.m2i.entity.Compte.listeOperations#2] (uninitialized)
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=2, solde=100.7, label=compte PEL xyz, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,418 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#1
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#1], was: [com.m2i.entity.Compte.listeClients#1] (uninitialized)
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#1], was: [com.m2i.entity.Compte.listeOperations#1] (uninitialized)
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,418 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=1, solde=200.7, label=compte courant, listeClients=<uninitialized>, listeOperations=<uninitialized>}

@@ -1,2 +1,87 @@
-2018-05-29 14:15:52,864 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
-2018-05-29 14:15:52,907 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#2
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#2], was: [com.m2i.entity.Compte.listeClients#2] (uninitialized)
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#2], was: [com.m2i.entity.Compte.listeOperations#2] (uninitialized)
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=2, solde=100.7, label=compte PEL xyz, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,434 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#1
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#-2
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - rolling back
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,449 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,455 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.Compte#1]
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#1
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#1], was: [com.m2i.entity.Compte.listeClients#1] (uninitialized)
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#1], was: [com.m2i.entity.Compte.listeOperations#1] (uninitialized)
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=1, solde=200.7, label=compte courant, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - begin
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.SQL - select compte0_.numero as numero2_2_0_, compte0_.label as label3_2_0_, compte0_.solde as solde4_2_0_, compte0_.apportMensuel as apportMe5_2_0_, compte0_.tauxInteret as tauxInte6_2_0_, compte0_.typeCompte as typeComp1_2_0_ from Compte compte0_ where compte0_.numero=?
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl - Starting ResultSet row #0
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Resolving associations for [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.TwoPhaseLoad - Done materializing entity [com.m2i.entity.ComptePEL#2]
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.resource.jdbc.internal.ResourceRegistryStandardImpl - HHH000387: ResultSet's statement was not registered
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader - Done entity load : com.m2i.entity.Compte#2
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.transaction.internal.TransactionImpl - committing
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Processing flush-time cascades
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Dirty checking collections
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeClients#2], was: [com.m2i.entity.Compte.listeClients#2] (uninitialized)
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.engine.internal.Collections - Collection found: [com.m2i.entity.Compte.listeOperations#2], was: [com.m2i.entity.Compte.listeOperations#2] (uninitialized)
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.event.internal.AbstractFlushingEventListener - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.internal.util.EntityPrinter - Listing entities:
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.internal.util.EntityPrinter - com.m2i.entity.Compte{numero=2, solde=100.7, label=compte PEL xyz, listeClients=<uninitialized>, listeOperations=<uninitialized>}
+2018-05-29 14:39:52,456 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,472 DEBUG main org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl - Initiating JDBC connection release from afterTransaction
+2018-05-29 14:39:52,472 DEBUG Thread-1 org.hibernate.internal.SessionFactoryImpl - HHH000031: Closing
+2018-05-29 14:39:52,472 DEBUG Thread-1 org.hibernate.type.spi.TypeConfiguration$Scope - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@1f06ec01] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@1fe8d51b]
+2018-05-29 14:39:52,472 DEBUG Thread-1 org.hibernate.service.internal.AbstractServiceRegistryImpl - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2018-05-29 14:39:52,472 DEBUG Thread-1 org.hibernate.boot.registry.internal.BootstrapServiceRegistryImpl - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2018-05-29 14:40:25,899 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 14:40:25,996 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 14:41:03,630 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 14:41:03,775 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-29 14:46:35,795 DEBUG main com.m2i.test.TestServiceCompte - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-29 14:46:35,838 DEBUG main com.m2i.test.TestServiceCompte - apres bon virement: solde1=200.7,solde2=100.7

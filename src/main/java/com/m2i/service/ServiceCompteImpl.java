@@ -2,23 +2,24 @@ package com.m2i.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.m2i.dao.IDaoCompte;
 import com.m2i.entity.Compte;
+import com.m2i.test.TestServiceCompte;
 
 @Service
 public class ServiceCompteImpl implements IServiceCompte {
-	
 	@Autowired
 	private IDaoCompte daoCompte;
+	private static Logger logger = LoggerFactory.getLogger(ServiceCompteImpl.class);
 
 	@Override
 	@Transactional() //à tester avec ou sans @Transactional
-	//à tester avec effectuerVirement(1L, 2L, 50.0) , comptes 1L et 2L existants
-	//à tester également avec effectuerVirement(1L, -2L, 50.0) , compte -2L inexistant
 	public void effectuerVirement(Long numCptDeb, Long numCptCred, Double montant) {
 		try {
 			String labelOp = "virement de " + montant + " du compte " + numCptDeb +  " vers compte " + numCptCred ;
@@ -34,7 +35,7 @@ public class ServiceCompteImpl implements IServiceCompte {
 			//cptCred.setSolde(cptCred.getSolde() + montant);
 			//daoCompte.updateCompte(cptCred); //inutile dans version avec @Transactional
 		} catch (Exception e) {
-			//logger.error(...)
+			logger.error("echec virement",e);
 			throw new RuntimeException("echec virement",e);
 		}
 	}

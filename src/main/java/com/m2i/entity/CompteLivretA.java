@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 //avec dans super classe "Compte":
 //@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="typeCompte",discriminatorType=DiscriminatorType.STRING)
+//@DiscriminatorValue("COURANT") //compte courant par defaut
 public class CompteLivretA extends Compte {
 	private Double tauxInteret; //en %
 

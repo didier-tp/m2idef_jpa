@@ -8,10 +8,17 @@ import javax.persistence.Entity;
 //avec dans super classe "Compte":
 //@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="typeCompte",discriminatorType=DiscriminatorType.STRING)
+//@DiscriminatorValue("COURANT") //compte courant par defaut
 public class ComptePEL extends Compte {
 	private Double tauxInteret; //en %
 	private Double apportMensuel;
 
+	@Override
+	public String toString() {
+		return "ComptePEL [tauxInteret=" + tauxInteret + ",apportMensuel=" + apportMensuel + "]"
+				+ " heritant de " + super.toString();
+	}
+	
 	public Double getTauxInteret() {
 		return tauxInteret;
 	}
@@ -30,11 +37,7 @@ public class ComptePEL extends Compte {
 		this.apportMensuel = apportMensuel;
 	}
 
-	@Override
-	public String toString() {
-		return "ComptePEL [tauxInteret=" + tauxInteret + ",apportMensuel=" + apportMensuel + "]"
-				+ " heritant de " + super.toString();
-	}
+	
 	
 	
 

@@ -22,6 +22,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Compte")
 @NamedQueries({
@@ -47,9 +49,13 @@ public class Compte {
 	@JoinTable(name = "Compte_Client",   
 	  joinColumns = {@JoinColumn(name = "numCpt")},                    
 	  inverseJoinColumns = {@JoinColumn(name = "numCli")}) 
+	@JsonIgnore// pour ne pas suivre le lien vers listeClients
+	           // quand un objet compte java sera transformé en JSON
 	private List<Client> listeClients; 
 	
 	@OneToMany(mappedBy="compte", fetch=FetchType.LAZY , cascade =CascadeType.ALL)
+	@JsonIgnore // pour ne pas suivre le lien vers listeOperations
+                // quand un objet compte java sera transformé en JSON
 	private List<Operation> listeOperations; //avec get/set
 
 

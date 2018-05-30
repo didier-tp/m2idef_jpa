@@ -251,3 +251,39 @@ java.lang.NullPointerException
 2018-05-29 16:26:50,074 DEBUG main com.m2i.test.TestDaoClient - 	ComptePEL [tauxInteret=1.5,apportMensuel=50.0] heritant de Compte [numero=2, label=compte PEL xyz, solde=50.7]
 2018-05-29 16:26:50,074 DEBUG main com.m2i.test.TestDaoClient - 	Compte [numero=3, label=compte courant, solde=0.7]
 2018-05-29 16:26:50,074 DEBUG main com.m2i.test.TestDaoClient - 	CompteLivretA [tauxInteret=1.0] heritant de Compte [numero=4, label=livret A xy, solde=345.6]
+2018-05-30 11:44:37,812 DEBUG main com.m2i.test.ServiceCompteTest - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-30 11:44:37,923 DEBUG main com.m2i.test.ServiceCompteTest - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-30 11:44:37,923 DEBUG main com.m2i.test.ServiceCompteTest - avant mauvais virement: solde1=200.7,solde2=100.7
+2018-05-30 11:44:37,938 ERROR main com.m2i.service.ServiceCompteImpl - echec virement null
+2018-05-30 11:44:37,938 DEBUG main com.m2i.test.ServiceCompteTest - virement erroné avec numCptCred=-2 inexistant
+2018-05-30 11:44:37,938 DEBUG main com.m2i.test.ServiceCompteTest - apres mauvais virement: solde1=200.7,solde2=100.7
+2018-05-30 11:44:37,969 DEBUG main com.m2i.test.TestDaoClient - Client [numero=3, nom=Therieur, prenom=alex, salaire=null]
+2018-05-30 11:44:38,001 DEBUG main com.m2i.test.TestDaoClient - 	Client [numero=1, nom=dupond, prenom=eric, salaire=2000.0]
+2018-05-30 11:44:38,001 DEBUG main com.m2i.test.TestDaoClient - 	Client [numero=2, nom=durant, prenom=alex, salaire=2500.0]
+2018-05-30 11:44:38,001 DEBUG main com.m2i.test.TestDaoClient - 	Client [numero=3, nom=Therieur, prenom=alex, salaire=null]
+2018-05-30 11:44:38,016 DEBUG main com.m2i.test.TestDaoClient - Client [numero=4, nom=Condor, prenom=olie, salaire=null]
+2018-05-30 11:44:38,032 DEBUG main com.m2i.test.TestDaoClient - Client [numero=4, nom=Condor, prenom=**nouveauPrenom**, salaire=null]
+2018-05-30 11:44:38,048 DEBUG main com.m2i.test.TestDaoClient - cRelu normalement null=null
+2018-05-30 11:44:38,048 DEBUG main com.m2i.test.TestDaoClient - adresse du client 1:Adresse [idAdresse=1, rue=rue 1, codePostal=75001, ville=Paris]
+2018-05-30 11:44:38,063 DEBUG main com.m2i.test.TestDaoClient - 	Compte [numero=1, label=compte courant, solde=200.7]
+2018-05-30 11:44:38,063 DEBUG main com.m2i.test.TestDaoClient - 	ComptePEL [tauxInteret=1.5,apportMensuel=50.0] heritant de Compte [numero=2, label=compte PEL xyz, solde=100.7]
+2018-05-30 11:44:38,063 DEBUG main com.m2i.test.TestDaoClient - 	Compte [numero=3, label=compte courant, solde=0.7]
+2018-05-30 11:44:38,063 DEBUG main com.m2i.test.TestDaoClient - 	CompteLivretA [tauxInteret=1.0] heritant de Compte [numero=4, label=livret A xy, solde=345.6]
+2018-05-30 12:00:10,467 DEBUG main com.m2i.test.ServiceCompteTest - avant bon virement: solde1=250.7,solde2=50.7
+2018-05-30 12:00:10,554 DEBUG main com.m2i.test.ServiceCompteTest - apres bon virement: solde1=200.7,solde2=100.7
+2018-05-30 12:00:10,569 DEBUG main com.m2i.test.ServiceCompteTest - avant mauvais virement: solde1=200.7,solde2=100.7
+2018-05-30 12:00:10,569 ERROR main com.m2i.service.ServiceCompteImpl - echec virement null
+2018-05-30 12:00:10,569 DEBUG main com.m2i.test.ServiceCompteTest - virement erroné avec numCptCred=-2 inexistant
+2018-05-30 12:00:10,585 DEBUG main com.m2i.test.ServiceCompteTest - apres mauvais virement: solde1=200.7,solde2=100.7
+2018-05-30 12:00:10,601 DEBUG main com.m2i.test.TestDaoClient - Client [numero=3, nom=Therieur, prenom=alex, salaire=null]
+2018-05-30 12:00:10,632 DEBUG main com.m2i.test.TestDaoClient - 	Client [numero=1, nom=dupond, prenom=eric, salaire=2000.0]
+2018-05-30 12:00:10,632 DEBUG main com.m2i.test.TestDaoClient - 	Client [numero=2, nom=durant, prenom=alex, salaire=2500.0]
+2018-05-30 12:00:10,632 DEBUG main com.m2i.test.TestDaoClient - 	Client [numero=3, nom=Therieur, prenom=alex, salaire=null]
+2018-05-30 12:00:10,648 DEBUG main com.m2i.test.TestDaoClient - Client [numero=4, nom=Condor, prenom=olie, salaire=null]
+2018-05-30 12:00:10,663 DEBUG main com.m2i.test.TestDaoClient - Client [numero=4, nom=Condor, prenom=**nouveauPrenom**, salaire=null]
+2018-05-30 12:00:10,694 DEBUG main com.m2i.test.TestDaoClient - cRelu normalement null=null
+2018-05-30 12:00:10,694 DEBUG main com.m2i.test.TestDaoClient - adresse du client 1:Adresse [idAdresse=1, rue=rue 1, codePostal=75001, ville=Paris]
+2018-05-30 12:00:10,710 DEBUG main com.m2i.test.TestDaoClient - 	Compte [numero=1, label=compte courant, solde=200.7]
+2018-05-30 12:00:10,710 DEBUG main com.m2i.test.TestDaoClient - 	ComptePEL [tauxInteret=1.5,apportMensuel=50.0] heritant de Compte [numero=2, label=compte PEL xyz, solde=100.7]
+2018-05-30 12:00:10,710 DEBUG main com.m2i.test.TestDaoClient - 	Compte [numero=3, label=compte courant, solde=0.7]
+2018-05-30 12:00:10,710 DEBUG main com.m2i.test.TestDaoClient - 	CompteLivretA [tauxInteret=1.0] heritant de Compte [numero=4, label=livret A xy, solde=345.6]

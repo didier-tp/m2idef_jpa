@@ -13,6 +13,8 @@ import javax.persistence.Table;
  * classe d'entité persitante prise en charge par JPA/Hibernate
  */
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="Devise")
 public class Devise {
@@ -28,6 +30,7 @@ public class Devise {
 	private Double change; // change par rapport au dollar
 
 	@OneToMany(mappedBy="devise",fetch=FetchType.EAGER)
+	@JsonIgnore
 	private List<Pays> listePays; //avec get/set
 	
 	public Devise() {

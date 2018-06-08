@@ -23,7 +23,7 @@ public class Adresse {
 	private String ville;
 	//private String pays
 	
-	@OneToOne
+	@OneToOne(optional=true)
 	@PrimaryKeyJoinColumn
 	private Client client; //avec get/set
 	
@@ -66,6 +66,8 @@ public class Adresse {
 	public void setClient(Client client) {
 		this.client = client;
 	}
+
+	
 	
 	
 }
